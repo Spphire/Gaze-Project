@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gaze Project Context"
+  short_description: "Project map for Quest gaze collection and Gaze-WAM training."
+  default_prompt: "Use $gaze-project-context to inspect the Quest gaze collection, Collector deployment, and Gaze-WAM training bridge."

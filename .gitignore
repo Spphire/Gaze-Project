@@ -1,0 +1,27 @@
+# Gaze-Project shell repository.
+#
+# The thirdparty directory contains independent source repositories. Keep their
+# code managed by their own remotes instead of committing nested gitlinks or
+# duplicate source trees here.
+/thirdparty/*
+!/thirdparty/.gitkeep
+
+# Local caches and generated artifacts.
+.pytest_cache/
+__pycache__/
+*.pyc
+*.pyo
+*.log
+*.tmp
+
+# OS/editor noise.
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local runtime artifacts that may appear beside docs.
+pc_recordings/
+raw/
+outputs/
+*.zarr/
