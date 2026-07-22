@@ -1,0 +1,3681 @@
+{
+  "ok": true,
+  "recordId": "record_bounded_teleop_v3_20260722_180900",
+  "sessionDirectory": "/ssd1/shenyibo/Quest3DataCollector/pc/offline_calibration/pc_recordings/record_bounded_teleop_v3_20260722_180900",
+  "thresholds": {
+    "minRobotTargetRatio": 0.95,
+    "maxRobotLatenessP95Seconds": 0.006,
+    "minAlignedTargetRatio": 0.95,
+    "maxAlignedLatenessP95Seconds": 0.016,
+    "maxQuestSourceAgeP95Seconds": 0.06,
+    "maxAlignedReusedSourceRatio": 0.1,
+    "maxUdpSequenceLossRatio": 0.001,
+    "maxUdpDatagramBytes": 1472.0,
+    "minCameraTargetRatio": 0.95,
+    "maxCameraDropRatio": 0.0,
+    "maxCameraLatencyP95Seconds": 0.1
+  },
+  "checks": [
+    {
+      "id": "pc_summary_present",
+      "label": "PC session summary present",
+      "ok": true,
+      "detail": "closedReason=recording_stop"
+    },
+    {
+      "id": "pc_writer_no_drops",
+      "label": "PC writer queue drops",
+      "ok": true,
+      "detail": "0 dropped message(s)"
+    },
+    {
+      "id": "pc_writer_no_error",
+      "label": "PC writer background errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "id": "pc_close_errors",
+      "label": "PC close/save errors",
+      "ok": true,
+      "detail": "0 close error(s)",
+      "closeErrors": []
+    },
+    {
+      "id": "pc_replay_cache",
+      "label": "Replay visualization cache",
+      "ok": true,
+      "detail": "/ssd1/shenyibo/Quest3DataCollector/pc/offline_calibration/pc_recordings/record_bounded_teleop_v3_20260722_180900/replay_visualization.json"
+    },
+    {
+      "id": "quest_udp_sequence_loss",
+      "label": "Quest UDP sequence loss",
+      "ok": true,
+      "detail": "0 missing of 3934 (0.0%)",
+      "performance": {
+        "rawPath": "/ssd1/shenyibo/Quest3DataCollector/pc/offline_calibration/pc_recordings/record_bounded_teleop_v3_20260722_180900/pc_telemetry_raw.jsonl",
+        "datagrams": 3934,
+        "sampleDatagrams": 3933,
+        "sequenceCount": 3934,
+        "firstSequence": 1,
+        "lastSequence": 3934,
+        "expectedSequenceCount": 3934,
+        "missingSequenceCount": 0,
+        "firstMissingSequences": [],
+        "sequenceLossRatio": 0.0,
+        "duplicateSequenceCount": 0,
+        "reorderedSequenceCount": 0,
+        "redundantDuplicateDatagramsIgnored": 7865,
+        "encodings": {
+          "json": 3934
+        },
+        "wireBytes": {
+          "count": 3934,
+          "mean": 1402.4946619217083,
+          "median": 1415.0,
+          "p90": 1419.0,
+          "p95": 1420.0,
+          "p99": 1421.0,
+          "min": 93.0,
+          "max": 1423.0
+        },
+        "jsonBytes": {
+          "count": 3934,
+          "mean": 1402.4946619217083,
+          "median": 1415.0,
+          "p90": 1419.0,
+          "p95": 1420.0,
+          "p99": 1421.0,
+          "min": 93.0,
+          "max": 1423.0
+        }
+      }
+    },
+    {
+      "id": "quest_udp_sequence_order",
+      "label": "Quest UDP sequence order",
+      "ok": true,
+      "detail": "0 duplicate, 0 reordered",
+      "performance": {
+        "rawPath": "/ssd1/shenyibo/Quest3DataCollector/pc/offline_calibration/pc_recordings/record_bounded_teleop_v3_20260722_180900/pc_telemetry_raw.jsonl",
+        "datagrams": 3934,
+        "sampleDatagrams": 3933,
+        "sequenceCount": 3934,
+        "firstSequence": 1,
+        "lastSequence": 3934,
+        "expectedSequenceCount": 3934,
+        "missingSequenceCount": 0,
+        "firstMissingSequences": [],
+        "sequenceLossRatio": 0.0,
+        "duplicateSequenceCount": 0,
+        "reorderedSequenceCount": 0,
+        "redundantDuplicateDatagramsIgnored": 7865,
+        "encodings": {
+          "json": 3934
+        },
+        "wireBytes": {
+          "count": 3934,
+          "mean": 1402.4946619217083,
+          "median": 1415.0,
+          "p90": 1419.0,
+          "p95": 1420.0,
+          "p99": 1421.0,
+          "min": 93.0,
+          "max": 1423.0
+        },
+        "jsonBytes": {
+          "count": 3934,
+          "mean": 1402.4946619217083,
+          "median": 1415.0,
+          "p90": 1419.0,
+          "p95": 1420.0,
+          "p99": 1421.0,
+          "min": 93.0,
+          "max": 1423.0
+        }
+      }
+    },
+    {
+      "id": "quest_udp_mtu",
+      "label": "Quest UDP datagrams fit MTU",
+      "ok": true,
+      "detail": "max 1423B, limit 1472B",
+      "performance": {
+        "count": 3934,
+        "mean": 1402.4946619217083,
+        "median": 1415.0,
+        "p90": 1419.0,
+        "p95": 1420.0,
+        "p99": 1421.0,
+        "min": 93.0,
+        "max": 1423.0
+      }
+    },
+    {
+      "id": "robot_realsense_present",
+      "label": "Robot/RealSense recording present",
+      "ok": true,
+      "detail": "status ok"
+    },
+    {
+      "id": "robot_state_rate",
+      "label": "Robot state effective rate",
+      "ok": true,
+      "detail": "90.0Hz / target 90.0Hz, rows 11778, gap p95 11.5ms",
+      "performance": {
+        "count": 11778,
+        "durationSeconds": 130.8556227270019,
+        "effectiveHz": 89.99995380076113,
+        "firstPerfCounterSeconds": 92834.215293628,
+        "lastPerfCounterSeconds": 92965.070916355,
+        "targetHz": 90.0,
+        "targetRatio": 0.9999994866751237,
+        "gapSeconds": {
+          "count": 11777,
+          "mean": 0.011111116814723775,
+          "min": 0.005612956010736525,
+          "max": 0.01797472999896854,
+          "recentWindowCount": 4096,
+          "median": 0.01111099800618831,
+          "p90": 0.01115429700439563,
+          "p95": 0.01150766400678549,
+          "p99": 0.012860629853093998
+        }
+      }
+    },
+    {
+      "id": "robot_state_gap_p95",
+      "label": "Robot state p95 gap",
+      "ok": true,
+      "detail": "gap p95 11.5ms",
+      "performance": {
+        "count": 11777,
+        "mean": 0.011111116814723775,
+        "min": 0.005612956010736525,
+        "max": 0.01797472999896854,
+        "recentWindowCount": 4096,
+        "median": 0.01111099800618831,
+        "p90": 0.01115429700439563,
+        "p95": 0.01150766400678549,
+        "p99": 0.012860629853093998
+      }
+    },
+    {
+      "id": "robot_state_lateness_p95",
+      "label": "Robot state sampler p95 lateness",
+      "ok": true,
+      "detail": "lateness p95 0.5ms",
+      "performance": {
+        "count": 11778,
+        "mean": 0.00014001468292258867,
+        "min": 3.5510020097717643e-06,
+        "max": 0.00693414980196394,
+        "recentWindowCount": 4096,
+        "median": 6.905133341206238e-05,
+        "p90": 0.00012604432413354516,
+        "p95": 0.00048039614557637833,
+        "p99": 0.0018160654217354041
+      }
+    },
+    {
+      "id": "robot_state_missed_ticks",
+      "label": "Robot state sampler missed ticks",
+      "ok": true,
+      "detail": "0 missed tick(s)"
+    },
+    {
+      "id": "aligned_sample_rate",
+      "label": "Final aligned sample effective rate",
+      "ok": true,
+      "detail": "30.0Hz / target 30.0Hz, rows 3925, gap p95 34.3ms",
+      "performance": {
+        "count": 3925,
+        "durationSeconds": 130.81068290599796,
+        "effectiveHz": 29.997549992303234,
+        "firstPerfCounterSeconds": 92834.24999296,
+        "lastPerfCounterSeconds": 92965.060675866,
+        "targetHz": 30.0,
+        "targetRatio": 0.9999183330767745,
+        "gapSeconds": {
+          "count": 3924,
+          "mean": 0.03333605578644189,
+          "min": 0.015581671003019437,
+          "max": 0.050010092003503814,
+          "recentWindowCount": 3924,
+          "median": 0.03334224750142312,
+          "p90": 0.03412164160254179,
+          "p95": 0.03432565964758396,
+          "p99": 0.04769502725830534
+        }
+      }
+    },
+    {
+      "id": "aligned_sample_lateness_p95",
+      "label": "Final aligned sample p95 lateness",
+      "ok": true,
+      "detail": "lateness p95 8.9ms",
+      "performance": {
+        "count": 3925,
+        "mean": 0.0015739787747797254,
+        "min": 5.0043046940118074e-05,
+        "max": 0.01897031263797544,
+        "recentWindowCount": 3925,
+        "median": 0.0009144097857642919,
+        "p90": 0.001309920972562395,
+        "p95": 0.0089008764130994,
+        "p99": 0.015091757527552544
+      }
+    },
+    {
+      "id": "aligned_quest_source_age_p95",
+      "label": "Aligned Quest source age p95",
+      "ok": true,
+      "detail": "source age p95 27.4ms",
+      "performance": {
+        "count": 3925,
+        "mean": 0.023031926938061227,
+        "min": 6.525700155179948e-05,
+        "max": 0.13524391000100877,
+        "recentWindowCount": 3925,
+        "median": 0.02394313800323289,
+        "p90": 0.026776116198743694,
+        "p95": 0.02739142700447701,
+        "p99": 0.0735586117976345
+      }
+    },
+    {
+      "id": "aligned_quest_source_reuse",
+      "label": "Aligned Quest source reuse",
+      "ok": true,
+      "detail": "109 reused of 3925 (2.8%)"
+    },
+    {
+      "id": "aligned_sample_missed_ticks",
+      "label": "Final aligned sampler missed ticks",
+      "ok": true,
+      "detail": "0 missed tick(s)",
+      "sampler": {
+        "targetHz": 30.0,
+        "periodSeconds": 0.03333333333333333,
+        "initialDelaySeconds": 0.008,
+        "freshSourceWaitSeconds": 0.015,
+        "ticks": 3925,
+        "missedTicks": 0,
+        "reusedSourceTicks": 109,
+        "callbackErrors": 0,
+        "lastCallbackError": null,
+        "threadAlive": false,
+        "targetDurationSeconds": 130.80000002664747,
+        "scheduledHz": 29.999999993888196,
+        "actualDurationSeconds": 130.81071239800076,
+        "effectiveHz": 29.997543229188715,
+        "latenessSeconds": {
+          "mean": 0.0015739787747797254,
+          "median": 0.0009144097857642919,
+          "p95": 0.0089008764130994,
+          "max": 0.01897031263797544
+        }
+      }
+    },
+    {
+      "id": "robot_close_errors",
+      "label": "Robot/RealSense close errors",
+      "ok": true,
+      "detail": "0 close error(s)",
+      "closeErrors": []
+    },
+    {
+      "id": "camera_writer_threads_closed",
+      "label": "Camera writer threads closed",
+      "ok": true,
+      "detail": "all camera writer threads closed"
+    },
+    {
+      "id": "camera_end_rate",
+      "label": "end camera effective rate",
+      "ok": true,
+      "detail": "end: 30.0Hz / target 30.0Hz, frames 3923, latency p95 3.8ms",
+      "performance": {
+        "video": {
+          "count": 3923,
+          "durationSeconds": 130.82663336300175,
+          "effectiveHz": 29.97860526700029,
+          "firstPerfCounterSeconds": 92834.224075725,
+          "lastPerfCounterSeconds": 92965.050709088,
+          "targetHz": 30.0,
+          "targetRatio": 0.999286842233343,
+          "gapSeconds": {
+            "count": 3922,
+            "mean": 0.033357122224120794,
+            "min": 0.026303659993573092,
+            "max": 0.03977465000934899,
+            "recentWindowCount": 3922,
+            "median": 0.033459015998232644,
+            "p90": 0.034794813803455324,
+            "p95": 0.035442696847167096,
+            "p99": 0.0371454396599438
+          }
+        },
+        "depth": {
+          "count": 1307,
+          "durationSeconds": 130.69639420699968,
+          "effectiveHz": 9.992624570281027,
+          "firstPerfCounterSeconds": 92834.286775043,
+          "lastPerfCounterSeconds": 92964.98316925,
+          "targetHz": 10.0,
+          "targetRatio": 0.9992624570281027,
+          "gapSeconds": {
+            "count": 1306,
+            "mean": 0.10007380873430298,
+            "min": 0.09389776700118091,
+            "max": 0.10670286399545148,
+            "recentWindowCount": 1306,
+            "median": 0.10005176450067665,
+            "p90": 0.1009371820036904,
+            "p95": 0.10141855475012562,
+            "p99": 0.10277182524441743
+          }
+        },
+        "writeDurationSeconds": {
+          "count": 3923,
+          "mean": 0.00193012978541536,
+          "min": 0.0006545340002048761,
+          "max": 0.05934833000355866,
+          "recentWindowCount": 3923,
+          "median": 0.0017602139996597543,
+          "p90": 0.002950533403782174,
+          "p95": 0.0035046746968873774,
+          "p99": 0.004541309020132756
+        },
+        "captureToWriteLatencySeconds": {
+          "count": 3923,
+          "mean": 0.0020545033239943193,
+          "min": 0.0006831810023868456,
+          "max": 0.06040817000030074,
+          "recentWindowCount": 3923,
+          "median": 0.001832524998462759,
+          "p90": 0.0032237356004770844,
+          "p95": 0.0038447039099992245,
+          "p99": 0.005165727482235523
+        },
+        "queueDrops": 0,
+        "sessionQueueDrops": 0,
+        "hubSubscriberDrops": 0,
+        "queueDropRatio": 0.0,
+        "videoFramesWritten": 3923,
+        "depthFramesWritten": 1307
+      }
+    },
+    {
+      "id": "camera_end_drop",
+      "label": "end camera queue drops",
+      "ok": true,
+      "detail": "end: drops 0, ratio 0.0%",
+      "performance": {
+        "video": {
+          "count": 3923,
+          "durationSeconds": 130.82663336300175,
+          "effectiveHz": 29.97860526700029,
+          "firstPerfCounterSeconds": 92834.224075725,
+          "lastPerfCounterSeconds": 92965.050709088,
+          "targetHz": 30.0,
+          "targetRatio": 0.999286842233343,
+          "gapSeconds": {
+            "count": 3922,
+            "mean": 0.033357122224120794,
+            "min": 0.026303659993573092,
+            "max": 0.03977465000934899,
+            "recentWindowCount": 3922,
+            "median": 0.033459015998232644,
+            "p90": 0.034794813803455324,
+            "p95": 0.035442696847167096,
+            "p99": 0.0371454396599438
+          }
+        },
+        "depth": {
+          "count": 1307,
+          "durationSeconds": 130.69639420699968,
+          "effectiveHz": 9.992624570281027,
+          "firstPerfCounterSeconds": 92834.286775043,
+          "lastPerfCounterSeconds": 92964.98316925,
+          "targetHz": 10.0,
+          "targetRatio": 0.9992624570281027,
+          "gapSeconds": {
+            "count": 1306,
+            "mean": 0.10007380873430298,
+            "min": 0.09389776700118091,
+            "max": 0.10670286399545148,
+            "recentWindowCount": 1306,
+            "median": 0.10005176450067665,
+            "p90": 0.1009371820036904,
+            "p95": 0.10141855475012562,
+            "p99": 0.10277182524441743
+          }
+        },
+        "writeDurationSeconds": {
+          "count": 3923,
+          "mean": 0.00193012978541536,
+          "min": 0.0006545340002048761,
+          "max": 0.05934833000355866,
+          "recentWindowCount": 3923,
+          "median": 0.0017602139996597543,
+          "p90": 0.002950533403782174,
+          "p95": 0.0035046746968873774,
+          "p99": 0.004541309020132756
+        },
+        "captureToWriteLatencySeconds": {
+          "count": 3923,
+          "mean": 0.0020545033239943193,
+          "min": 0.0006831810023868456,
+          "max": 0.06040817000030074,
+          "recentWindowCount": 3923,
+          "median": 0.001832524998462759,
+          "p90": 0.0032237356004770844,
+          "p95": 0.0038447039099992245,
+          "p99": 0.005165727482235523
+        },
+        "queueDrops": 0,
+        "sessionQueueDrops": 0,
+        "hubSubscriberDrops": 0,
+        "queueDropRatio": 0.0,
+        "videoFramesWritten": 3923,
+        "depthFramesWritten": 1307
+      }
+    },
+    {
+      "id": "camera_end_latency_p95",
+      "label": "end camera capture-to-write latency p95",
+      "ok": true,
+      "detail": "end: latency p95 3.8ms",
+      "performance": {
+        "count": 3923,
+        "mean": 0.0020545033239943193,
+        "min": 0.0006831810023868456,
+        "max": 0.06040817000030074,
+        "recentWindowCount": 3923,
+        "median": 0.001832524998462759,
+        "p90": 0.0032237356004770844,
+        "p95": 0.0038447039099992245,
+        "p99": 0.005165727482235523
+      }
+    },
+    {
+      "id": "camera_third_rate",
+      "label": "third camera effective rate",
+      "ok": true,
+      "detail": "third: 30.0Hz / target 30.0Hz, frames 3923, latency p95 4.2ms",
+      "performance": {
+        "video": {
+          "count": 3923,
+          "durationSeconds": 130.82467085401004,
+          "effectiveHz": 29.97905497791499,
+          "firstPerfCounterSeconds": 92834.24290787,
+          "lastPerfCounterSeconds": 92965.067578724,
+          "targetHz": 30.0,
+          "targetRatio": 0.9993018325971664,
+          "gapSeconds": {
+            "count": 3922,
+            "mean": 0.03335662183937023,
+            "min": 0.022952294995775446,
+            "max": 0.042913316006888635,
+            "recentWindowCount": 3922,
+            "median": 0.033416256999771576,
+            "p90": 0.034834210405824705,
+            "p95": 0.03532253430457786,
+            "p99": 0.03704914120418834
+          }
+        },
+        "depth": {
+          "count": 1308,
+          "durationSeconds": 130.79563249999774,
+          "effectiveHz": 9.992688402650009,
+          "firstPerfCounterSeconds": 92834.271946224,
+          "lastPerfCounterSeconds": 92965.067578724,
+          "targetHz": 10.0,
+          "targetRatio": 0.9992688402650008,
+          "gapSeconds": {
+            "count": 1307,
+            "mean": 0.10007316947207172,
+            "min": 0.09159356099553406,
+            "max": 0.11082998900383245,
+            "recentWindowCount": 1307,
+            "median": 0.10003373700601514,
+            "p90": 0.10179579399409704,
+            "p95": 0.10244158440473257,
+            "p99": 0.10411934641568224
+          }
+        },
+        "writeDurationSeconds": {
+          "count": 3923,
+          "mean": 0.0018735166857631678,
+          "min": 0.0006684419931843877,
+          "max": 0.04281717399135232,
+          "recentWindowCount": 3923,
+          "median": 0.0015617460012435913,
+          "p90": 0.0032579251972492786,
+          "p95": 0.00399249269394204,
+          "p99": 0.005743549793842248
+        },
+        "captureToWriteLatencySeconds": {
+          "count": 3923,
+          "mean": 0.001968025389452702,
+          "min": 0.000696466988301836,
+          "max": 0.04405356200004462,
+          "recentWindowCount": 3923,
+          "median": 0.0016351350059267133,
+          "p90": 0.003401954204309732,
+          "p95": 0.004205850709695367,
+          "p99": 0.005969651220366355
+        },
+        "queueDrops": 0,
+        "sessionQueueDrops": 0,
+        "hubSubscriberDrops": 0,
+        "queueDropRatio": 0.0,
+        "videoFramesWritten": 3923,
+        "depthFramesWritten": 1308
+      }
+    },
+    {
+      "id": "camera_third_drop",
+      "label": "third camera queue drops",
+      "ok": true,
+      "detail": "third: drops 0, ratio 0.0%",
+      "performance": {
+        "video": {
+          "count": 3923,
+          "durationSeconds": 130.82467085401004,
+          "effectiveHz": 29.97905497791499,
+          "firstPerfCounterSeconds": 92834.24290787,
+          "lastPerfCounterSeconds": 92965.067578724,
+          "targetHz": 30.0,
+          "targetRatio": 0.9993018325971664,
+          "gapSeconds": {
+            "count": 3922,
+            "mean": 0.03335662183937023,
+            "min": 0.022952294995775446,
+            "max": 0.042913316006888635,
+            "recentWindowCount": 3922,
+            "median": 0.033416256999771576,
+            "p90": 0.034834210405824705,
+            "p95": 0.03532253430457786,
+            "p99": 0.03704914120418834
+          }
+        },
+        "depth": {
+          "count": 1308,
+          "durationSeconds": 130.79563249999774,
+          "effectiveHz": 9.992688402650009,
+          "firstPerfCounterSeconds": 92834.271946224,
+          "lastPerfCounterSeconds": 92965.067578724,
+          "targetHz": 10.0,
+          "targetRatio": 0.9992688402650008,
+          "gapSeconds": {
+            "count": 1307,
+            "mean": 0.10007316947207172,
+            "min": 0.09159356099553406,
+            "max": 0.11082998900383245,
+            "recentWindowCount": 1307,
+            "median": 0.10003373700601514,
+            "p90": 0.10179579399409704,
+            "p95": 0.10244158440473257,
+            "p99": 0.10411934641568224
+          }
+        },
+        "writeDurationSeconds": {
+          "count": 3923,
+          "mean": 0.0018735166857631678,
+          "min": 0.0006684419931843877,
+          "max": 0.04281717399135232,
+          "recentWindowCount": 3923,
+          "median": 0.0015617460012435913,
+          "p90": 0.0032579251972492786,
+          "p95": 0.00399249269394204,
+          "p99": 0.005743549793842248
+        },
+        "captureToWriteLatencySeconds": {
+          "count": 3923,
+          "mean": 0.001968025389452702,
+          "min": 0.000696466988301836,
+          "max": 0.04405356200004462,
+          "recentWindowCount": 3923,
+          "median": 0.0016351350059267133,
+          "p90": 0.003401954204309732,
+          "p95": 0.004205850709695367,
+          "p99": 0.005969651220366355
+        },
+        "queueDrops": 0,
+        "sessionQueueDrops": 0,
+        "hubSubscriberDrops": 0,
+        "queueDropRatio": 0.0,
+        "videoFramesWritten": 3923,
+        "depthFramesWritten": 1308
+      }
+    },
+    {
+      "id": "camera_third_latency_p95",
+      "label": "third camera capture-to-write latency p95",
+      "ok": true,
+      "detail": "third: latency p95 4.2ms",
+      "performance": {
+        "count": 3923,
+        "mean": 0.001968025389452702,
+        "min": 0.000696466988301836,
+        "max": 0.04405356200004462,
+        "recentWindowCount": 3923,
+        "median": 0.0016351350059267133,
+        "p90": 0.003401954204309732,
+        "p95": 0.004205850709695367,
+        "p99": 0.005969651220366355
+      }
+    }
+  ],
+  "robotSummary": {
+    "status": "ok",
+    "samples": 3925,
+    "questAlignedSamples": 3925,
+    "robotStateSamples": 11778,
+    "images": 0,
+    "videoFrames": 7846,
+    "depthFrames": 2615,
+    "recordDepth": true,
+    "recordDepthEveryNFrames": 3,
+    "recordDepthFormat": "ffv1",
+    "depthStreamEncodings": {
+      "third": "ffv1",
+      "end": "ffv1"
+    },
+    "depthStreamWarnings": [],
+    "depthStreamDisabledRoles": {},
+    "performance": {
+      "recordingDurationSeconds": 130.9541191180033,
+      "robotState": {
+        "count": 11778,
+        "durationSeconds": 130.8556227270019,
+        "effectiveHz": 89.99995380076113,
+        "firstPerfCounterSeconds": 92834.215293628,
+        "lastPerfCounterSeconds": 92965.070916355,
+        "targetHz": 90.0,
+        "targetRatio": 0.9999994866751237,
+        "gapSeconds": {
+          "count": 11777,
+          "mean": 0.011111116814723775,
+          "min": 0.005612956010736525,
+          "max": 0.01797472999896854,
+          "recentWindowCount": 4096,
+          "median": 0.01111099800618831,
+          "p90": 0.01115429700439563,
+          "p95": 0.01150766400678549,
+          "p99": 0.012860629853093998
+        }
+      },
+      "robotStateTargets": {
+        "count": 11778,
+        "durationSeconds": 130.8555556393403,
+        "effectiveHz": 89.99999994237442,
+        "firstPerfCounterSeconds": 92834.215290077,
+        "lastPerfCounterSeconds": 92965.07084571634,
+        "targetHz": 90.0,
+        "targetRatio": 0.9999999993597157,
+        "gapSeconds": {
+          "count": 11777,
+          "mean": 0.01111111111822538,
+          "min": 0.01111111111822538,
+          "max": 0.01111111111822538,
+          "recentWindowCount": 4096,
+          "median": 0.01111111111822538,
+          "p90": 0.01111111111822538,
+          "p95": 0.01111111111822538,
+          "p99": 0.01111111111822538
+        }
+      },
+      "robotStateLatenessSeconds": {
+        "count": 11778,
+        "mean": 0.00014001468292258867,
+        "min": 3.5510020097717643e-06,
+        "max": 0.00693414980196394,
+        "recentWindowCount": 4096,
+        "median": 6.905133341206238e-05,
+        "p90": 0.00012604432413354516,
+        "p95": 0.00048039614557637833,
+        "p99": 0.0018160654217354041
+      },
+      "robotStateMissedTicks": 0,
+      "alignedSamples": {
+        "count": 3925,
+        "durationSeconds": 130.81068290599796,
+        "effectiveHz": 29.997549992303234,
+        "firstPerfCounterSeconds": 92834.24999296,
+        "lastPerfCounterSeconds": 92965.060675866,
+        "targetHz": 30.0,
+        "targetRatio": 0.9999183330767745,
+        "gapSeconds": {
+          "count": 3924,
+          "mean": 0.03333605578644189,
+          "min": 0.015581671003019437,
+          "max": 0.050010092003503814,
+          "recentWindowCount": 3924,
+          "median": 0.03334224750142312,
+          "p90": 0.03412164160254179,
+          "p95": 0.03432565964758396,
+          "p99": 0.04769502725830534
+        }
+      },
+      "alignedSampleTargets": {
+        "count": 3925,
+        "durationSeconds": 130.80000002664747,
+        "effectiveHz": 29.999999993888196,
+        "firstPerfCounterSeconds": 92834.248835922,
+        "lastPerfCounterSeconds": 92965.04883594865,
+        "targetHz": 30.0,
+        "targetRatio": 0.9999999997962732,
+        "gapSeconds": {
+          "count": 3924,
+          "mean": 0.03333333334012423,
+          "min": 0.03333333334012423,
+          "max": 0.03333333334012423,
+          "recentWindowCount": 3924,
+          "median": 0.03333333334012423,
+          "p90": 0.03333333334012423,
+          "p95": 0.03333333334012423,
+          "p99": 0.03333333334012423
+        }
+      },
+      "alignedSampleLatenessSeconds": {
+        "count": 3925,
+        "mean": 0.0015739787747797254,
+        "min": 5.0043046940118074e-05,
+        "max": 0.01897031263797544,
+        "recentWindowCount": 3925,
+        "median": 0.0009144097857642919,
+        "p90": 0.001309920972562395,
+        "p95": 0.0089008764130994,
+        "p99": 0.015091757527552544
+      },
+      "alignedQuestSourceAgeSeconds": {
+        "count": 3925,
+        "mean": 0.023031926938061227,
+        "min": 6.525700155179948e-05,
+        "max": 0.13524391000100877,
+        "recentWindowCount": 3925,
+        "median": 0.02394313800323289,
+        "p90": 0.026776116198743694,
+        "p95": 0.02739142700447701,
+        "p99": 0.0735586117976345
+      },
+      "alignedReusedSourceSamples": 109,
+      "targetAlignedSampleHz": 30.0,
+      "cameras": {
+        "end": {
+          "video": {
+            "count": 3923,
+            "durationSeconds": 130.82663336300175,
+            "effectiveHz": 29.97860526700029,
+            "firstPerfCounterSeconds": 92834.224075725,
+            "lastPerfCounterSeconds": 92965.050709088,
+            "targetHz": 30.0,
+            "targetRatio": 0.999286842233343,
+            "gapSeconds": {
+              "count": 3922,
+              "mean": 0.033357122224120794,
+              "min": 0.026303659993573092,
+              "max": 0.03977465000934899,
+              "recentWindowCount": 3922,
+              "median": 0.033459015998232644,
+              "p90": 0.034794813803455324,
+              "p95": 0.035442696847167096,
+              "p99": 0.0371454396599438
+            }
+          },
+          "depth": {
+            "count": 1307,
+            "durationSeconds": 130.69639420699968,
+            "effectiveHz": 9.992624570281027,
+            "firstPerfCounterSeconds": 92834.286775043,
+            "lastPerfCounterSeconds": 92964.98316925,
+            "targetHz": 10.0,
+            "targetRatio": 0.9992624570281027,
+            "gapSeconds": {
+              "count": 1306,
+              "mean": 0.10007380873430298,
+              "min": 0.09389776700118091,
+              "max": 0.10670286399545148,
+              "recentWindowCount": 1306,
+              "median": 0.10005176450067665,
+              "p90": 0.1009371820036904,
+              "p95": 0.10141855475012562,
+              "p99": 0.10277182524441743
+            }
+          },
+          "writeDurationSeconds": {
+            "count": 3923,
+            "mean": 0.00193012978541536,
+            "min": 0.0006545340002048761,
+            "max": 0.05934833000355866,
+            "recentWindowCount": 3923,
+            "median": 0.0017602139996597543,
+            "p90": 0.002950533403782174,
+            "p95": 0.0035046746968873774,
+            "p99": 0.004541309020132756
+          },
+          "captureToWriteLatencySeconds": {
+            "count": 3923,
+            "mean": 0.0020545033239943193,
+            "min": 0.0006831810023868456,
+            "max": 0.06040817000030074,
+            "recentWindowCount": 3923,
+            "median": 0.001832524998462759,
+            "p90": 0.0032237356004770844,
+            "p95": 0.0038447039099992245,
+            "p99": 0.005165727482235523
+          },
+          "queueDrops": 0,
+          "sessionQueueDrops": 0,
+          "hubSubscriberDrops": 0,
+          "queueDropRatio": 0.0,
+          "videoFramesWritten": 3923,
+          "depthFramesWritten": 1307
+        },
+        "third": {
+          "video": {
+            "count": 3923,
+            "durationSeconds": 130.82467085401004,
+            "effectiveHz": 29.97905497791499,
+            "firstPerfCounterSeconds": 92834.24290787,
+            "lastPerfCounterSeconds": 92965.067578724,
+            "targetHz": 30.0,
+            "targetRatio": 0.9993018325971664,
+            "gapSeconds": {
+              "count": 3922,
+              "mean": 0.03335662183937023,
+              "min": 0.022952294995775446,
+              "max": 0.042913316006888635,
+              "recentWindowCount": 3922,
+              "median": 0.033416256999771576,
+              "p90": 0.034834210405824705,
+              "p95": 0.03532253430457786,
+              "p99": 0.03704914120418834
+            }
+          },
+          "depth": {
+            "count": 1308,
+            "durationSeconds": 130.79563249999774,
+            "effectiveHz": 9.992688402650009,
+            "firstPerfCounterSeconds": 92834.271946224,
+            "lastPerfCounterSeconds": 92965.067578724,
+            "targetHz": 10.0,
+            "targetRatio": 0.9992688402650008,
+            "gapSeconds": {
+              "count": 1307,
+              "mean": 0.10007316947207172,
+              "min": 0.09159356099553406,
+              "max": 0.11082998900383245,
+              "recentWindowCount": 1307,
+              "median": 0.10003373700601514,
+              "p90": 0.10179579399409704,
+              "p95": 0.10244158440473257,
+              "p99": 0.10411934641568224
+            }
+          },
+          "writeDurationSeconds": {
+            "count": 3923,
+            "mean": 0.0018735166857631678,
+            "min": 0.0006684419931843877,
+            "max": 0.04281717399135232,
+            "recentWindowCount": 3923,
+            "median": 0.0015617460012435913,
+            "p90": 0.0032579251972492786,
+            "p95": 0.00399249269394204,
+            "p99": 0.005743549793842248
+          },
+          "captureToWriteLatencySeconds": {
+            "count": 3923,
+            "mean": 0.001968025389452702,
+            "min": 0.000696466988301836,
+            "max": 0.04405356200004462,
+            "recentWindowCount": 3923,
+            "median": 0.0016351350059267133,
+            "p90": 0.003401954204309732,
+            "p95": 0.004205850709695367,
+            "p99": 0.005969651220366355
+          },
+          "queueDrops": 0,
+          "sessionQueueDrops": 0,
+          "hubSubscriberDrops": 0,
+          "queueDropRatio": 0.0,
+          "videoFramesWritten": 3923,
+          "depthFramesWritten": 1308
+        }
+      },
+      "targetCameraHz": 30.0,
+      "recordDepth": true,
+      "recordDepthFormat": "ffv1",
+      "depthStreamEncodings": {
+        "third": "ffv1",
+        "end": "ffv1"
+      },
+      "recordDepthEveryNFrames": 3,
+      "targetDepthHz": 10.0,
+      "quality": {
+        "ok": true,
+        "robotState": {
+          "ok": true,
+          "targetHz": 90.0,
+          "minimumEffectiveHz": 85.5,
+          "maximumP95GapSeconds": 0.016666666666666666,
+          "effectiveHz": 89.99995380076113,
+          "p95GapSeconds": 0.01150766400678549,
+          "enoughSamples": true,
+          "rateOk": true,
+          "gapOk": true,
+          "p95LatenessSeconds": 0.00048039614557637833,
+          "missedTicks": 0
+        },
+        "alignedSamples": {
+          "ok": true,
+          "targetHz": 30.0,
+          "minimumEffectiveHz": 28.5,
+          "maximumP95GapSeconds": 0.05,
+          "effectiveHz": 29.997549992303234,
+          "p95GapSeconds": 0.03432565964758396,
+          "enoughSamples": true,
+          "rateOk": true,
+          "gapOk": true,
+          "p95LatenessSeconds": 0.0089008764130994
+        },
+        "cameras": {
+          "end": {
+            "ok": true,
+            "targetHz": 30.0,
+            "minimumEffectiveHz": 28.5,
+            "maximumP95GapSeconds": 0.05,
+            "effectiveHz": 29.97860526700029,
+            "p95GapSeconds": 0.035442696847167096,
+            "enoughSamples": true,
+            "rateOk": true,
+            "gapOk": true,
+            "queueDrops": 0,
+            "queueDropRatio": 0.0
+          },
+          "third": {
+            "ok": true,
+            "targetHz": 30.0,
+            "minimumEffectiveHz": 28.5,
+            "maximumP95GapSeconds": 0.05,
+            "effectiveHz": 29.97905497791499,
+            "p95GapSeconds": 0.03532253430457786,
+            "enoughSamples": true,
+            "rateOk": true,
+            "gapOk": true,
+            "queueDrops": 0,
+            "queueDropRatio": 0.0
+          }
+        },
+        "criteria": "effective rate >= 95% of target, p95 gap <= 1.5x target period, robot p95 lateness <= 6ms with zero missed ticks, aligned p95 lateness <= 16ms, and zero camera queue drops"
+      },
+      "computedFromJsonl": {
+        "robotState": {
+          "count": 11778,
+          "durationSeconds": 130.8556227270019,
+          "effectiveHz": 89.99995380076113,
+          "firstPerfCounterSeconds": 92834.215293628,
+          "lastPerfCounterSeconds": 92965.070916355,
+          "targetHz": 90.0,
+          "targetRatio": 0.9999994866751237,
+          "gapSeconds": {
+            "count": 11777,
+            "mean": 0.011111116814723775,
+            "median": 0.011110943989478983,
+            "p90": 0.011156131996540353,
+            "p95": 0.011553193192230535,
+            "p99": 0.012829109040903858,
+            "min": 0.005612956010736525,
+            "max": 0.01797472999896854
+          }
+        },
+        "robotStateTargets": {
+          "count": 11778,
+          "durationSeconds": 130.8555556393403,
+          "effectiveHz": 89.99999994237442,
+          "firstPerfCounterSeconds": 92834.215290077,
+          "lastPerfCounterSeconds": 92965.07084571634,
+          "targetHz": 90.0,
+          "targetRatio": 0.9999999993597157,
+          "gapSeconds": {
+            "count": 11777,
+            "mean": 0.01111111111822538,
+            "median": 0.01111111111822538,
+            "p90": 0.01111111111822538,
+            "p95": 0.01111111111822538,
+            "p99": 0.01111111111822538,
+            "min": 0.01111111111822538,
+            "max": 0.01111111111822538
+          }
+        },
+        "robotStateLatenessSeconds": {
+          "count": 11778,
+          "mean": 0.00014001468292258867,
+          "median": 6.840260903118178e-05,
+          "p90": 0.0001279040588997306,
+          "p95": 0.0005269934736134006,
+          "p99": 0.0017925740826467476,
+          "min": 3.5510020097717643e-06,
+          "max": 0.00693414980196394
+        },
+        "alignedSamples": {
+          "count": 3925,
+          "durationSeconds": 130.81068290599796,
+          "effectiveHz": 29.997549992303234,
+          "firstPerfCounterSeconds": 92834.24999296,
+          "lastPerfCounterSeconds": 92965.060675866,
+          "targetHz": 30.0,
+          "targetRatio": 0.9999183330767745,
+          "gapSeconds": {
+            "count": 3924,
+            "mean": 0.03333605578644189,
+            "median": 0.03334224750142312,
+            "p90": 0.03412164160254179,
+            "p95": 0.03432565964758396,
+            "p99": 0.04769502725830534,
+            "min": 0.015581671003019437,
+            "max": 0.050010092003503814
+          }
+        },
+        "alignedSampleTargets": {
+          "count": 3925,
+          "durationSeconds": 130.80000002664747,
+          "effectiveHz": 29.999999993888196,
+          "firstPerfCounterSeconds": 92834.248835922,
+          "lastPerfCounterSeconds": 92965.04883594865,
+          "targetHz": 30.0,
+          "targetRatio": 0.9999999997962732,
+          "gapSeconds": {
+            "count": 3924,
+            "mean": 0.03333333334012423,
+            "median": 0.03333333334012423,
+            "p90": 0.03333333334012423,
+            "p95": 0.03333333334012423,
+            "p99": 0.03333333334012423,
+            "min": 0.03333333334012423,
+            "max": 0.03333333334012423
+          }
+        },
+        "alignedSampleLatenessSeconds": {
+          "count": 3925,
+          "mean": 0.0015739787747797254,
+          "median": 0.0009144097857642919,
+          "p90": 0.001309920972562395,
+          "p95": 0.0089008764130994,
+          "p99": 0.015091757527552544,
+          "min": 5.0043046940118074e-05,
+          "max": 0.01897031263797544
+        },
+        "alignedQuestSourceAgeSeconds": {
+          "count": 3925,
+          "mean": 0.023031926938061227,
+          "median": 0.02394313800323289,
+          "p90": 0.026776116198743694,
+          "p95": 0.02739142700447701,
+          "p99": 0.0735586117976345,
+          "min": 6.525700155179948e-05,
+          "max": 0.13524391000100877
+        },
+        "alignedReusedSourceSamples": 109,
+        "targetAlignedSampleHz": 30.0,
+        "cameras": {
+          "end": {
+            "video": {
+              "count": 3923,
+              "durationSeconds": 130.82663336300175,
+              "effectiveHz": 29.97860526700029,
+              "firstPerfCounterSeconds": 92834.224075725,
+              "lastPerfCounterSeconds": 92965.050709088,
+              "targetHz": 30.0,
+              "targetRatio": 0.999286842233343,
+              "gapSeconds": {
+                "count": 3922,
+                "mean": 0.033357122224120794,
+                "median": 0.033459015998232644,
+                "p90": 0.034794813803455324,
+                "p95": 0.035442696847167096,
+                "p99": 0.0371454396599438,
+                "min": 0.026303659993573092,
+                "max": 0.03977465000934899
+              }
+            },
+            "depth": {
+              "count": 1307,
+              "durationSeconds": 130.69639420699968,
+              "effectiveHz": 9.992624570281027,
+              "firstPerfCounterSeconds": 92834.286775043,
+              "lastPerfCounterSeconds": 92964.98316925,
+              "targetHz": 10.0,
+              "targetRatio": 0.9992624570281027,
+              "gapSeconds": {
+                "count": 1306,
+                "mean": 0.10007380873430298,
+                "median": 0.10005176450067665,
+                "p90": 0.1009371820036904,
+                "p95": 0.10141855475012562,
+                "p99": 0.10277182524441743,
+                "min": 0.09389776700118091,
+                "max": 0.10670286399545148
+              }
+            },
+            "writeDurationSeconds": {
+              "count": 3923,
+              "mean": 0.00193012978541536,
+              "median": 0.0017602139996597543,
+              "p90": 0.002950533403782174,
+              "p95": 0.0035046746968873774,
+              "p99": 0.004541309020132756,
+              "min": 0.0006545340002048761,
+              "max": 0.05934833000355866
+            },
+            "captureToWriteLatencySeconds": {
+              "count": 3923,
+              "mean": 0.0020545033239943193,
+              "median": 0.001832524998462759,
+              "p90": 0.0032237356004770844,
+              "p95": 0.0038447039099992245,
+              "p99": 0.005165727482235523,
+              "min": 0.0006831810023868456,
+              "max": 0.06040817000030074
+            },
+            "queueDrops": 0,
+            "sessionQueueDrops": 0,
+            "hubSubscriberDrops": 0,
+            "queueDropRatio": 0.0,
+            "videoFramesWritten": 3923,
+            "depthFramesWritten": 1307
+          },
+          "third": {
+            "video": {
+              "count": 3923,
+              "durationSeconds": 130.82467085401004,
+              "effectiveHz": 29.97905497791499,
+              "firstPerfCounterSeconds": 92834.24290787,
+              "lastPerfCounterSeconds": 92965.067578724,
+              "targetHz": 30.0,
+              "targetRatio": 0.9993018325971664,
+              "gapSeconds": {
+                "count": 3922,
+                "mean": 0.03335662183937023,
+                "median": 0.033416256999771576,
+                "p90": 0.034834210405824705,
+                "p95": 0.03532253430457786,
+                "p99": 0.03704914120418834,
+                "min": 0.022952294995775446,
+                "max": 0.042913316006888635
+              }
+            },
+            "depth": {
+              "count": 1308,
+              "durationSeconds": 130.79563249999774,
+              "effectiveHz": 9.992688402650009,
+              "firstPerfCounterSeconds": 92834.271946224,
+              "lastPerfCounterSeconds": 92965.067578724,
+              "targetHz": 10.0,
+              "targetRatio": 0.9992688402650008,
+              "gapSeconds": {
+                "count": 1307,
+                "mean": 0.10007316947207172,
+                "median": 0.10003373700601514,
+                "p90": 0.10179579399409704,
+                "p95": 0.10244158440473257,
+                "p99": 0.10411934641568224,
+                "min": 0.09159356099553406,
+                "max": 0.11082998900383245
+              }
+            },
+            "writeDurationSeconds": {
+              "count": 3923,
+              "mean": 0.0018735166857631678,
+              "median": 0.0015617460012435913,
+              "p90": 0.0032579251972492786,
+              "p95": 0.00399249269394204,
+              "p99": 0.005743549793842248,
+              "min": 0.0006684419931843877,
+              "max": 0.04281717399135232
+            },
+            "captureToWriteLatencySeconds": {
+              "count": 3923,
+              "mean": 0.001968025389452702,
+              "median": 0.0016351350059267133,
+              "p90": 0.003401954204309732,
+              "p95": 0.004205850709695367,
+              "p99": 0.005969651220366355,
+              "min": 0.000696466988301836,
+              "max": 0.04405356200004462
+            },
+            "queueDrops": 0,
+            "sessionQueueDrops": 0,
+            "hubSubscriberDrops": 0,
+            "queueDropRatio": 0.0,
+            "videoFramesWritten": 3923,
+            "depthFramesWritten": 1308
+          }
+        },
+        "targetRobotStateHz": 90.0,
+        "targetCameraHz": 30.0,
+        "recordDepth": true,
+        "recordDepthEveryNFrames": 3,
+        "targetDepthHz": 10.0
+      }
+    },
+    "motionCommands": 1058,
+    "motionSkips": 1359,
+    "motionErrors": 0,
+    "lastMotionReason": "right_hand_trigger_not_held",
+    "closeErrors": [],
+    "cameraWriterThreadsAliveOnClose": {
+      "end": false,
+      "third": false
+    },
+    "detections": 49,
+    "requiredDetections": 6,
+    "translationSpanM": 0.17031895424665955,
+    "rotationSpanDeg": 32.3290995826532,
+    "residualMedianMm": 5.641605137886547,
+    "failureReason": null
+  },
+  "pcSummary": {
+    "recordId": "record_bounded_teleop_v3_20260722_180900",
+    "sessionDirectory": "/ssd1/shenyibo/Quest3DataCollector/pc/offline_calibration/pc_recordings/record_bounded_teleop_v3_20260722_180900",
+    "questOutputDirectory": null,
+    "closedReason": "recording_stop",
+    "startUtc": "2026-07-22T09:12:29.063252+00:00",
+    "startRemote": "10.128.0.12:50064",
+    "startPcReceiveUnixSeconds": 1784711549.0620708,
+    "startPcReceivePerfCounterSeconds": 92833.955608609,
+    "messages": 3934,
+    "samples": 3933,
+    "lastSampleIndex": 3932,
+    "rawMessagesWritten": 3934,
+    "rawSampleSkips": 0,
+    "controllerCsvRowsWritten": 7866,
+    "controllerCsvSampleSkips": 0,
+    "leftPoseSamples": 3933,
+    "rightPoseSamples": 3933,
+    "leftSources": {
+      "bounded_teleop_probe": 3933
+    },
+    "rightSources": {
+      "bounded_teleop_probe": 3933
+    },
+    "leftMissingReasons": {},
+    "rightMissingReasons": {},
+    "rawJsonl": "/ssd1/shenyibo/Quest3DataCollector/pc/offline_calibration/pc_recordings/record_bounded_teleop_v3_20260722_180900/pc_telemetry_raw.jsonl",
+    "samplesJsonl": "/ssd1/shenyibo/Quest3DataCollector/pc/offline_calibration/pc_recordings/record_bounded_teleop_v3_20260722_180900/pc_samples.jsonl",
+    "controllersCsv": "/ssd1/shenyibo/Quest3DataCollector/pc/offline_calibration/pc_recordings/record_bounded_teleop_v3_20260722_180900/pc_controllers.csv",
+    "robotRealSenseDirectory": "/ssd1/shenyibo/Quest3DataCollector/pc/offline_calibration/pc_recordings/record_bounded_teleop_v3_20260722_180900/robot_realsense",
+    "robotStartStatus": {
+      "enabled": true,
+      "stage": "recording",
+      "recording": true,
+      "reason": "recording; hold right middle-finger trigger to teleoperate",
+      "robotConnected": true,
+      "robotSn": "Rizon4-062713",
+      "poseField": "flange_pose",
+      "cameraSerial": "244222073667",
+      "thirdCameraSerial": "750612070265",
+      "motionArmed": true,
+      "freedriveEnabled": false,
+      "freeDragEnabled": false,
+      "freedriveMethod": null,
+      "freeDragMethod": null,
+      "freedrivePlan": null,
+      "freeDragPlan": null,
+      "freedriveLoopAlive": false,
+      "freeDragLoopAlive": false,
+      "cartesianControlLoopAlive": false,
+      "freedriveLastError": null,
+      "freeDragLastError": null,
+      "cartesianSendSignature": null,
+      "controlMode": "controller_teleop",
+      "controllerMotionEnabled": true,
+      "teleopRequiresRightSideButton": true,
+      "teleopRequiresRightHandTrigger": true,
+      "gripperEnabled": true,
+      "activeSession": {
+        "ok": true,
+        "recordId": "record_bounded_teleop_v3_20260722_180900",
+        "stage": "recording",
+        "directory": "/ssd1/shenyibo/Quest3DataCollector/pc/offline_calibration/pc_recordings/record_bounded_teleop_v3_20260722_180900/robot_realsense",
+        "recordMode": "async",
+        "recordingDurationSeconds": 0.01719634600158315,
+        "recordingStartUnixSeconds": 1784711549.3212388,
+        "robotStateHz": 90.0,
+        "cameraSerial": "244222073667",
+        "thirdCameraSerial": "750612070265",
+        "cameraRoles": [
+          "end",
+          "third"
+        ],
+        "samples": 0,
+        "questAlignedSamples": 0,
+        "robotStateSamples": 2,
+        "images": 0,
+        "videos": {
+          "end": "videos/end_244222073667.mp4",
+          "third": "videos/third_750612070265.mp4"
+        },
+        "depthStreams": {
+          "third": "depth/third_750612070265.ffv1.mkv",
+          "end": "depth/end_244222073667.ffv1.mkv"
+        },
+        "depthStreamEncodings": {},
+        "depthStreamFrameCounts": {},
+        "depthStreamWarnings": [],
+        "depthStreamDisabledRoles": {},
+        "videoFrames": 0,
+        "depthFrames": 0,
+        "cameraQueueDrops": {},
+        "cameraSubscriberDrops": {
+          "third": 0,
+          "end": 0
+        },
+        "cameraQueueMaxSize": {
+          "end": 8,
+          "third": 8
+        },
+        "cameraWriterThreadsAliveOnClose": {},
+        "errors": 0,
+        "robotStateErrors": 0,
+        "cameraRecordErrors": 0,
+        "motionCommands": 0,
+        "motionSkips": 0,
+        "motionRateLimited": 0,
+        "motionErrors": 0,
+        "lastMotion": null,
+        "controlMode": "controller_teleop",
+        "controllerAlignmentRequired": true,
+        "controllerAlignmentAvailable": true,
+        "gripperEnabled": true,
+        "gripperAvailable": true,
+        "gripperCommands": 0,
+        "gripperSkips": 0,
+        "gripperErrors": 0,
+        "lastGripper": {
+          "ok": true,
+          "commandSent": false,
+          "record_id": "record_bounded_teleop_v3_20260722_180900",
+          "captured_at": "2026-07-22T09:12:29.321015+00:00",
+          "action": "initialize",
+          "device": "Robotiq-2F-85",
+          "status": {
+            "enabled": true,
+            "device": "Robotiq-2F-85",
+            "lastError": null,
+            "enableAttempts": [
+              {
+                "device": "Robotiq-2F-85",
+                "ok": true,
+                "initError": null
+              }
+            ],
+            "reusedExisting": true
+          }
+        },
+        "cartesianControl": {
+          "count": 0,
+          "errors": 0,
+          "slowCalls": 0,
+          "last": null,
+          "slowThresholdSeconds": 0.05,
+          "globalCount": 0,
+          "globalErrors": 0,
+          "globalSlowCalls": 0
+        },
+        "poseDiversity": {
+          "samples": 0,
+          "analyzedSamples": 0,
+          "pairCount": 0,
+          "totalPairCount": 0,
+          "pairwiseDownsampled": false,
+          "eeTranslationSpanM": 0.0,
+          "eeRotationSpanDeg": 0.0,
+          "eeAxisSpanM": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minTranslationSpanM": 0.02,
+          "minRotationSpanDeg": 2.0
+        },
+        "performance": {
+          "recordingDurationSeconds": 0.017390887005603872,
+          "robotState": {
+            "count": 2,
+            "durationSeconds": 0.011552753989235498,
+            "effectiveHz": 86.55944729124928,
+            "firstPerfCounterSeconds": 92834.215293628,
+            "lastPerfCounterSeconds": 92834.226846382,
+            "targetHz": 90.0,
+            "targetRatio": 0.9617716365694365,
+            "gapSeconds": {
+              "count": 1,
+              "mean": 0.011552753989235498,
+              "min": 0.011552753989235498,
+              "max": 0.011552753989235498,
+              "recentWindowCount": 1,
+              "median": 0.011552753989235498,
+              "p90": 0.011552753989235498,
+              "p95": 0.011552753989235498,
+              "p99": 0.011552753989235498
+            }
+          },
+          "robotStateTargets": {
+            "count": 2,
+            "durationSeconds": 0.01111111111822538,
+            "effectiveHz": 89.99999994237442,
+            "firstPerfCounterSeconds": 92834.215290077,
+            "lastPerfCounterSeconds": 92834.22640118812,
+            "targetHz": 90.0,
+            "targetRatio": 0.9999999993597157,
+            "gapSeconds": {
+              "count": 1,
+              "mean": 0.01111111111822538,
+              "min": 0.01111111111822538,
+              "max": 0.01111111111822538,
+              "recentWindowCount": 1,
+              "median": 0.01111111111822538,
+              "p90": 0.01111111111822538,
+              "p95": 0.01111111111822538,
+              "p99": 0.01111111111822538
+            }
+          },
+          "robotStateLatenessSeconds": {
+            "count": 2,
+            "mean": 0.00022437243751483038,
+            "min": 3.5510020097717643e-06,
+            "max": 0.000445193873019889,
+            "recentWindowCount": 2,
+            "median": 0.00022437243751483038,
+            "p90": 0.0004010295859188773,
+            "p95": 0.0004231117294693831,
+            "p99": 0.0004407774443097878
+          },
+          "robotStateMissedTicks": 0,
+          "alignedSamples": {
+            "count": 0
+          },
+          "alignedSampleTargets": {
+            "count": 0
+          },
+          "alignedSampleLatenessSeconds": {
+            "count": 0
+          },
+          "alignedQuestSourceAgeSeconds": {
+            "count": 0
+          },
+          "alignedReusedSourceSamples": 0,
+          "targetAlignedSampleHz": 30.0,
+          "cameras": {
+            "end": {
+              "video": {
+                "count": 0
+              },
+              "depth": {
+                "count": 0
+              },
+              "writeDurationSeconds": {
+                "count": 0
+              },
+              "captureToWriteLatencySeconds": {
+                "count": 0
+              },
+              "queueDrops": 0,
+              "sessionQueueDrops": 0,
+              "hubSubscriberDrops": 0,
+              "queueDropRatio": 0.0,
+              "videoFramesWritten": 0,
+              "depthFramesWritten": 0
+            },
+            "third": {
+              "video": {
+                "count": 0
+              },
+              "depth": {
+                "count": 0
+              },
+              "writeDurationSeconds": {
+                "count": 0
+              },
+              "captureToWriteLatencySeconds": {
+                "count": 0
+              },
+              "queueDrops": 0,
+              "sessionQueueDrops": 0,
+              "hubSubscriberDrops": 0,
+              "queueDropRatio": 0.0,
+              "videoFramesWritten": 0,
+              "depthFramesWritten": 0
+            }
+          },
+          "targetCameraHz": 30.0,
+          "recordDepth": true,
+          "recordDepthFormat": "ffv1",
+          "depthStreamEncodings": {},
+          "recordDepthEveryNFrames": 3,
+          "targetDepthHz": 10.0,
+          "quality": {
+            "ok": false,
+            "robotState": {
+              "ok": true,
+              "targetHz": 90.0,
+              "minimumEffectiveHz": 85.5,
+              "maximumP95GapSeconds": 0.016666666666666666,
+              "effectiveHz": 86.55944729124928,
+              "p95GapSeconds": 0.011552753989235498,
+              "enoughSamples": true,
+              "rateOk": true,
+              "gapOk": true,
+              "p95LatenessSeconds": 0.0004231117294693831,
+              "missedTicks": 0
+            },
+            "alignedSamples": {
+              "ok": false,
+              "targetHz": 30.0,
+              "minimumEffectiveHz": 28.5,
+              "maximumP95GapSeconds": 0.05,
+              "effectiveHz": null,
+              "p95GapSeconds": null,
+              "enoughSamples": false,
+              "rateOk": false,
+              "gapOk": false,
+              "p95LatenessSeconds": null
+            },
+            "cameras": {
+              "end": {
+                "ok": false,
+                "targetHz": 30.0,
+                "minimumEffectiveHz": 28.5,
+                "maximumP95GapSeconds": 0.05,
+                "effectiveHz": null,
+                "p95GapSeconds": null,
+                "enoughSamples": false,
+                "rateOk": false,
+                "gapOk": false,
+                "queueDrops": 0,
+                "queueDropRatio": 0.0
+              },
+              "third": {
+                "ok": false,
+                "targetHz": 30.0,
+                "minimumEffectiveHz": 28.5,
+                "maximumP95GapSeconds": 0.05,
+                "effectiveHz": null,
+                "p95GapSeconds": null,
+                "enoughSamples": false,
+                "rateOk": false,
+                "gapOk": false,
+                "queueDrops": 0,
+                "queueDropRatio": 0.0
+              }
+            },
+            "criteria": "effective rate >= 95% of target, p95 gap <= 1.5x target period, robot p95 lateness <= 6ms with zero missed ticks, aligned p95 lateness <= 16ms, and zero camera queue drops"
+          }
+        },
+        "closeErrors": [],
+        "lastError": null,
+        "lastRobotStateError": null,
+        "lastCameraRecordError": null
+      }
+    },
+    "writerQueueMax": 2048,
+    "writerQueueBacklog": 0,
+    "writerDroppedMessages": 0,
+    "writerDroppedSampleMessages": 0,
+    "writerDroppedControlMessages": 0,
+    "writerDroppedOnEnqueue": 0,
+    "writerDroppedOnClose": 0,
+    "writerEnqueueBackpressureEvents": 0,
+    "robotRecordSampleCalls": 3925,
+    "robotRecordSampleSkips": 5,
+    "formalAlignedSampleHz": 30.0,
+    "alignedSampler": {
+      "targetHz": 30.0,
+      "periodSeconds": 0.03333333333333333,
+      "initialDelaySeconds": 0.008,
+      "freshSourceWaitSeconds": 0.015,
+      "ticks": 3925,
+      "missedTicks": 0,
+      "reusedSourceTicks": 109,
+      "callbackErrors": 0,
+      "lastCallbackError": null,
+      "threadAlive": false,
+      "targetDurationSeconds": 130.80000002664747,
+      "scheduledHz": 29.999999993888196,
+      "actualDurationSeconds": 130.81071239800076,
+      "effectiveHz": 29.997543229188715,
+      "latenessSeconds": {
+        "mean": 0.0015739787747797254,
+        "median": 0.0009144097857642919,
+        "p95": 0.0089008764130994,
+        "max": 0.01897031263797544
+      }
+    },
+    "writerError": null,
+    "closeMetrics": {
+      "alignedSamplerStopSeconds": 0.00012000900460407138,
+      "controlJoinSeconds": 6.847199983894825e-05,
+      "writerDrainSeconds": 8.436996722593904e-06,
+      "writerQueueDropSeconds": 1.9300205167382956e-07,
+      "writerJoinSeconds": 7.036900206003338e-05,
+      "robotStopSeconds": 1.4098745499941288,
+      "totalSeconds": 1.410142029999406,
+      "writerUnfinishedTasksBeforeDrop": 0,
+      "writerDroppedOnClose": 0
+    },
+    "calibrationSnapshotAtStart": {
+      "capturedUtc": "2026-07-22T09:12:29.068000+00:00",
+      "ok": true,
+      "kind": "result",
+      "recordId": "record_pc_calib_20260717_184211",
+      "resultPath": "/ssd1/shenyibo/Quest3DataCollector/pc/offline_calibration/outputs/pc_live_calibration/record_pc_calib_20260717_184211/calibration_result_25mm.json",
+      "pattern": [
+        11,
+        8
+      ],
+      "squareSizeM": 0.025,
+      "imageYAxis": "down",
+      "coordinateFrame": "pc_world_rh_z_up_x_forward",
+      "rawTrajectoryFrame": "pc_world_rh_z_up_x_forward",
+      "worldFrameConversion": {
+        "name": "unity_lh_y_up_to_pc_rh_z_up",
+        "position": "pc = [unity.z, -unity.x, unity.y]",
+        "quaternion_wxyz": "derived from T_pc = C @ T_unity @ C^-1",
+        "transform": "C=[[0,0,1],[-1,0,0],[0,1,0]]; T_pc = C4 @ T_unity @ inv(C4)",
+        "axes": "pc +X=Unity +Z forward, pc +Y=Unity -X left, pc +Z=Unity +Y up",
+        "legacyPcYUpFrame": "pc_world_rh_y_up_z_back"
+      },
+      "T_world_board": {
+        "matrix_4x4": [
+          [
+            -0.13709114019240717,
+            -0.9905410279569641,
+            -0.005872922160781803,
+            0.6790178399084978
+          ],
+          [
+            -0.9903613733179758,
+            0.13717971620662786,
+            -0.019133104850019452,
+            0.13960891798710806
+          ],
+          [
+            0.019757771141466308,
+            0.003193336097231398,
+            -0.999799696481296,
+            1.4032570194967255
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation_m": [
+          0.6790178399084978,
+          0.13960891798710806,
+          1.4032570194967255
+        ],
+        "rotation_matrix": [
+          [
+            -0.13709114019240717,
+            -0.9905410279569641,
+            -0.005872922160781803
+          ],
+          [
+            -0.9903613733179758,
+            0.13717971620662786,
+            -0.019133104850019452
+          ],
+          [
+            0.019757771141466308,
+            0.003193336097231398,
+            -0.999799696481296
+          ]
+        ],
+        "quaternion_wxyz": [
+          -0.008498228240708615,
+          -0.6567969321034968,
+          0.7540010863520575,
+          -0.005285061600476751
+        ],
+        "quaternion_xyzw": [
+          -0.6567969321034968,
+          0.7540010863520575,
+          -0.005285061600476751,
+          -0.008498228240708615
+        ],
+        "coordinateFrame": "pc_world_rh_z_up_x_forward"
+      },
+      "T_board_world": {
+        "matrix_4x4": [
+          [
+            -0.13709114019240717,
+            -0.9903613733179759,
+            0.01975777114146631,
+            0.20362537858531796
+          ],
+          [
+            -0.9905410279569642,
+            0.1371797162066279,
+            0.003193336097231399,
+            0.6489624461006427
+          ],
+          [
+            -0.005872922160781805,
+            -0.019133104850019452,
+            -0.9997996964812961,
+            1.4096349131634842
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation_m": [
+          0.20362537858531796,
+          0.6489624461006427,
+          1.4096349131634842
+        ],
+        "rotation_matrix": [
+          [
+            -0.13709114019240717,
+            -0.9903613733179759,
+            0.01975777114146631
+          ],
+          [
+            -0.9905410279569642,
+            0.1371797162066279,
+            0.003193336097231399
+          ],
+          [
+            -0.005872922160781805,
+            -0.019133104850019452,
+            -0.9997996964812961
+          ]
+        ],
+        "quaternion_wxyz": [
+          0.008498228240708615,
+          -0.6567969321034968,
+          0.7540010863520574,
+          -0.0052850616004767505
+        ],
+        "quaternion_xyzw": [
+          -0.6567969321034968,
+          0.7540010863520574,
+          -0.0052850616004767505,
+          0.008498228240708615
+        ],
+        "coordinateFrame": "pc_world_rh_z_up_x_forward"
+      },
+      "T_unity_world_board": {
+        "matrix_4x4": [
+          [
+            0.13717971620662786,
+            0.019133104850019452,
+            0.9903613733179758,
+            -0.13960891798710806
+          ],
+          [
+            -0.003193336097231398,
+            -0.999799696481296,
+            0.019757771141466308,
+            1.4032570194967255
+          ],
+          [
+            0.9905410279569641,
+            -0.005872922160781803,
+            -0.13709114019240717,
+            0.6790178399084978
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation_m": [
+          -0.13960891798710806,
+          1.4032570194967255,
+          0.6790178399084978
+        ],
+        "quaternion_xyzw": [
+          0.7540010863520575,
+          0.0052850616004767505,
+          0.6567969321034967,
+          -0.008498228240708613
+        ],
+        "quaternion_wxyz": [
+          -0.008498228240708613,
+          0.7540010863520575,
+          0.0052850616004767505,
+          0.6567969321034967
+        ],
+        "rotation_matrix": [
+          [
+            0.13717971620662786,
+            0.019133104850019452,
+            0.9903613733179758
+          ],
+          [
+            -0.003193336097231398,
+            -0.999799696481296,
+            0.019757771141466308
+          ],
+          [
+            0.9905410279569641,
+            -0.005872922160781803,
+            -0.13709114019240717
+          ]
+        ],
+        "coordinateFrame": "unity_world_lh_y_up_z_forward"
+      },
+      "T_board_unity_world": {
+        "matrix_4x4": [
+          [
+            0.1371797162066279,
+            -0.003193336097231397,
+            0.9905410279569642,
+            -0.6489624461006426
+          ],
+          [
+            0.019133104850019452,
+            -0.9997996964812959,
+            -0.005872922160781803,
+            1.4096349131634842
+          ],
+          [
+            0.9903613733179759,
+            0.019757771141466308,
+            -0.13709114019240717,
+            0.20362537858531796
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation_m": [
+          -0.6489624461006426,
+          1.4096349131634842,
+          0.20362537858531796
+        ],
+        "quaternion_xyzw": [
+          0.7540010863520574,
+          0.0052850616004767505,
+          0.6567969321034968,
+          0.008498228240708613
+        ],
+        "quaternion_wxyz": [
+          0.008498228240708613,
+          0.7540010863520574,
+          0.0052850616004767505,
+          0.6567969321034968
+        ],
+        "rotation_matrix": [
+          [
+            0.1371797162066279,
+            -0.003193336097231397,
+            0.9905410279569642
+          ],
+          [
+            0.019133104850019452,
+            -0.9997996964812959,
+            -0.005872922160781803
+          ],
+          [
+            0.9903613733179759,
+            0.019757771141466308,
+            -0.13709114019240717
+          ]
+        ],
+        "coordinateFrame": "unity_world_lh_y_up_z_forward"
+      },
+      "questWorldOriginInBoardM": [
+        0.20362537858531796,
+        0.6489624461006427,
+        1.4096349131634842
+      ],
+      "unityQuestWorldOriginInBoardM": [
+        -0.6489624461006426,
+        1.4096349131634842,
+        0.20362537858531796
+      ],
+      "boardNormalWorld": [
+        -0.005872922160781803,
+        -0.019133104850019452,
+        -0.999799696481296
+      ],
+      "boardNormalAbsAngleToWorldZDeg": 1.1468039206038716,
+      "bestLagSeconds": 0.005,
+      "keptFrames": 8,
+      "inputFrames": 115,
+      "appearanceAnchorFrames": 8,
+      "reprojectionOrderFrames": 0,
+      "rot180Frames": 0,
+      "medianReprojectionPx": 0.5141805670736708,
+      "p90ReprojectionPx": 0.9371689773464662
+    },
+    "calibrationSnapshotAtEnd": {
+      "capturedUtc": "2026-07-22T09:14:40.181004+00:00",
+      "ok": true,
+      "kind": "result",
+      "recordId": "record_pc_calib_20260717_184211",
+      "resultPath": "/ssd1/shenyibo/Quest3DataCollector/pc/offline_calibration/outputs/pc_live_calibration/record_pc_calib_20260717_184211/calibration_result_25mm.json",
+      "pattern": [
+        11,
+        8
+      ],
+      "squareSizeM": 0.025,
+      "imageYAxis": "down",
+      "coordinateFrame": "pc_world_rh_z_up_x_forward",
+      "rawTrajectoryFrame": "pc_world_rh_z_up_x_forward",
+      "worldFrameConversion": {
+        "name": "unity_lh_y_up_to_pc_rh_z_up",
+        "position": "pc = [unity.z, -unity.x, unity.y]",
+        "quaternion_wxyz": "derived from T_pc = C @ T_unity @ C^-1",
+        "transform": "C=[[0,0,1],[-1,0,0],[0,1,0]]; T_pc = C4 @ T_unity @ inv(C4)",
+        "axes": "pc +X=Unity +Z forward, pc +Y=Unity -X left, pc +Z=Unity +Y up",
+        "legacyPcYUpFrame": "pc_world_rh_y_up_z_back"
+      },
+      "T_world_board": {
+        "matrix_4x4": [
+          [
+            -0.13709114019240717,
+            -0.9905410279569641,
+            -0.005872922160781803,
+            0.6790178399084978
+          ],
+          [
+            -0.9903613733179758,
+            0.13717971620662786,
+            -0.019133104850019452,
+            0.13960891798710806
+          ],
+          [
+            0.019757771141466308,
+            0.003193336097231398,
+            -0.999799696481296,
+            1.4032570194967255
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation_m": [
+          0.6790178399084978,
+          0.13960891798710806,
+          1.4032570194967255
+        ],
+        "rotation_matrix": [
+          [
+            -0.13709114019240717,
+            -0.9905410279569641,
+            -0.005872922160781803
+          ],
+          [
+            -0.9903613733179758,
+            0.13717971620662786,
+            -0.019133104850019452
+          ],
+          [
+            0.019757771141466308,
+            0.003193336097231398,
+            -0.999799696481296
+          ]
+        ],
+        "quaternion_wxyz": [
+          -0.008498228240708615,
+          -0.6567969321034968,
+          0.7540010863520575,
+          -0.005285061600476751
+        ],
+        "quaternion_xyzw": [
+          -0.6567969321034968,
+          0.7540010863520575,
+          -0.005285061600476751,
+          -0.008498228240708615
+        ],
+        "coordinateFrame": "pc_world_rh_z_up_x_forward"
+      },
+      "T_board_world": {
+        "matrix_4x4": [
+          [
+            -0.13709114019240717,
+            -0.9903613733179759,
+            0.01975777114146631,
+            0.20362537858531796
+          ],
+          [
+            -0.9905410279569642,
+            0.1371797162066279,
+            0.003193336097231399,
+            0.6489624461006427
+          ],
+          [
+            -0.005872922160781805,
+            -0.019133104850019452,
+            -0.9997996964812961,
+            1.4096349131634842
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation_m": [
+          0.20362537858531796,
+          0.6489624461006427,
+          1.4096349131634842
+        ],
+        "rotation_matrix": [
+          [
+            -0.13709114019240717,
+            -0.9903613733179759,
+            0.01975777114146631
+          ],
+          [
+            -0.9905410279569642,
+            0.1371797162066279,
+            0.003193336097231399
+          ],
+          [
+            -0.005872922160781805,
+            -0.019133104850019452,
+            -0.9997996964812961
+          ]
+        ],
+        "quaternion_wxyz": [
+          0.008498228240708615,
+          -0.6567969321034968,
+          0.7540010863520574,
+          -0.0052850616004767505
+        ],
+        "quaternion_xyzw": [
+          -0.6567969321034968,
+          0.7540010863520574,
+          -0.0052850616004767505,
+          0.008498228240708615
+        ],
+        "coordinateFrame": "pc_world_rh_z_up_x_forward"
+      },
+      "T_unity_world_board": {
+        "matrix_4x4": [
+          [
+            0.13717971620662786,
+            0.019133104850019452,
+            0.9903613733179758,
+            -0.13960891798710806
+          ],
+          [
+            -0.003193336097231398,
+            -0.999799696481296,
+            0.019757771141466308,
+            1.4032570194967255
+          ],
+          [
+            0.9905410279569641,
+            -0.005872922160781803,
+            -0.13709114019240717,
+            0.6790178399084978
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation_m": [
+          -0.13960891798710806,
+          1.4032570194967255,
+          0.6790178399084978
+        ],
+        "quaternion_xyzw": [
+          0.7540010863520575,
+          0.0052850616004767505,
+          0.6567969321034967,
+          -0.008498228240708613
+        ],
+        "quaternion_wxyz": [
+          -0.008498228240708613,
+          0.7540010863520575,
+          0.0052850616004767505,
+          0.6567969321034967
+        ],
+        "rotation_matrix": [
+          [
+            0.13717971620662786,
+            0.019133104850019452,
+            0.9903613733179758
+          ],
+          [
+            -0.003193336097231398,
+            -0.999799696481296,
+            0.019757771141466308
+          ],
+          [
+            0.9905410279569641,
+            -0.005872922160781803,
+            -0.13709114019240717
+          ]
+        ],
+        "coordinateFrame": "unity_world_lh_y_up_z_forward"
+      },
+      "T_board_unity_world": {
+        "matrix_4x4": [
+          [
+            0.1371797162066279,
+            -0.003193336097231397,
+            0.9905410279569642,
+            -0.6489624461006426
+          ],
+          [
+            0.019133104850019452,
+            -0.9997996964812959,
+            -0.005872922160781803,
+            1.4096349131634842
+          ],
+          [
+            0.9903613733179759,
+            0.019757771141466308,
+            -0.13709114019240717,
+            0.20362537858531796
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation_m": [
+          -0.6489624461006426,
+          1.4096349131634842,
+          0.20362537858531796
+        ],
+        "quaternion_xyzw": [
+          0.7540010863520574,
+          0.0052850616004767505,
+          0.6567969321034968,
+          0.008498228240708613
+        ],
+        "quaternion_wxyz": [
+          0.008498228240708613,
+          0.7540010863520574,
+          0.0052850616004767505,
+          0.6567969321034968
+        ],
+        "rotation_matrix": [
+          [
+            0.1371797162066279,
+            -0.003193336097231397,
+            0.9905410279569642
+          ],
+          [
+            0.019133104850019452,
+            -0.9997996964812959,
+            -0.005872922160781803
+          ],
+          [
+            0.9903613733179759,
+            0.019757771141466308,
+            -0.13709114019240717
+          ]
+        ],
+        "coordinateFrame": "unity_world_lh_y_up_z_forward"
+      },
+      "questWorldOriginInBoardM": [
+        0.20362537858531796,
+        0.6489624461006427,
+        1.4096349131634842
+      ],
+      "unityQuestWorldOriginInBoardM": [
+        -0.6489624461006426,
+        1.4096349131634842,
+        0.20362537858531796
+      ],
+      "boardNormalWorld": [
+        -0.005872922160781803,
+        -0.019133104850019452,
+        -0.999799696481296
+      ],
+      "boardNormalAbsAngleToWorldZDeg": 1.1468039206038716,
+      "bestLagSeconds": 0.005,
+      "keptFrames": 8,
+      "inputFrames": 115,
+      "appearanceAnchorFrames": 8,
+      "reprojectionOrderFrames": 0,
+      "rot180Frames": 0,
+      "medianReprojectionPx": 0.5141805670736708,
+      "p90ReprojectionPx": 0.9371689773464662
+    },
+    "calibrationSnapshot": {
+      "capturedUtc": "2026-07-22T09:12:29.068000+00:00",
+      "ok": true,
+      "kind": "result",
+      "recordId": "record_pc_calib_20260717_184211",
+      "resultPath": "/ssd1/shenyibo/Quest3DataCollector/pc/offline_calibration/outputs/pc_live_calibration/record_pc_calib_20260717_184211/calibration_result_25mm.json",
+      "pattern": [
+        11,
+        8
+      ],
+      "squareSizeM": 0.025,
+      "imageYAxis": "down",
+      "coordinateFrame": "pc_world_rh_z_up_x_forward",
+      "rawTrajectoryFrame": "pc_world_rh_z_up_x_forward",
+      "worldFrameConversion": {
+        "name": "unity_lh_y_up_to_pc_rh_z_up",
+        "position": "pc = [unity.z, -unity.x, unity.y]",
+        "quaternion_wxyz": "derived from T_pc = C @ T_unity @ C^-1",
+        "transform": "C=[[0,0,1],[-1,0,0],[0,1,0]]; T_pc = C4 @ T_unity @ inv(C4)",
+        "axes": "pc +X=Unity +Z forward, pc +Y=Unity -X left, pc +Z=Unity +Y up",
+        "legacyPcYUpFrame": "pc_world_rh_y_up_z_back"
+      },
+      "T_world_board": {
+        "matrix_4x4": [
+          [
+            -0.13709114019240717,
+            -0.9905410279569641,
+            -0.005872922160781803,
+            0.6790178399084978
+          ],
+          [
+            -0.9903613733179758,
+            0.13717971620662786,
+            -0.019133104850019452,
+            0.13960891798710806
+          ],
+          [
+            0.019757771141466308,
+            0.003193336097231398,
+            -0.999799696481296,
+            1.4032570194967255
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation_m": [
+          0.6790178399084978,
+          0.13960891798710806,
+          1.4032570194967255
+        ],
+        "rotation_matrix": [
+          [
+            -0.13709114019240717,
+            -0.9905410279569641,
+            -0.005872922160781803
+          ],
+          [
+            -0.9903613733179758,
+            0.13717971620662786,
+            -0.019133104850019452
+          ],
+          [
+            0.019757771141466308,
+            0.003193336097231398,
+            -0.999799696481296
+          ]
+        ],
+        "quaternion_wxyz": [
+          -0.008498228240708615,
+          -0.6567969321034968,
+          0.7540010863520575,
+          -0.005285061600476751
+        ],
+        "quaternion_xyzw": [
+          -0.6567969321034968,
+          0.7540010863520575,
+          -0.005285061600476751,
+          -0.008498228240708615
+        ],
+        "coordinateFrame": "pc_world_rh_z_up_x_forward"
+      },
+      "T_board_world": {
+        "matrix_4x4": [
+          [
+            -0.13709114019240717,
+            -0.9903613733179759,
+            0.01975777114146631,
+            0.20362537858531796
+          ],
+          [
+            -0.9905410279569642,
+            0.1371797162066279,
+            0.003193336097231399,
+            0.6489624461006427
+          ],
+          [
+            -0.005872922160781805,
+            -0.019133104850019452,
+            -0.9997996964812961,
+            1.4096349131634842
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation_m": [
+          0.20362537858531796,
+          0.6489624461006427,
+          1.4096349131634842
+        ],
+        "rotation_matrix": [
+          [
+            -0.13709114019240717,
+            -0.9903613733179759,
+            0.01975777114146631
+          ],
+          [
+            -0.9905410279569642,
+            0.1371797162066279,
+            0.003193336097231399
+          ],
+          [
+            -0.005872922160781805,
+            -0.019133104850019452,
+            -0.9997996964812961
+          ]
+        ],
+        "quaternion_wxyz": [
+          0.008498228240708615,
+          -0.6567969321034968,
+          0.7540010863520574,
+          -0.0052850616004767505
+        ],
+        "quaternion_xyzw": [
+          -0.6567969321034968,
+          0.7540010863520574,
+          -0.0052850616004767505,
+          0.008498228240708615
+        ],
+        "coordinateFrame": "pc_world_rh_z_up_x_forward"
+      },
+      "T_unity_world_board": {
+        "matrix_4x4": [
+          [
+            0.13717971620662786,
+            0.019133104850019452,
+            0.9903613733179758,
+            -0.13960891798710806
+          ],
+          [
+            -0.003193336097231398,
+            -0.999799696481296,
+            0.019757771141466308,
+            1.4032570194967255
+          ],
+          [
+            0.9905410279569641,
+            -0.005872922160781803,
+            -0.13709114019240717,
+            0.6790178399084978
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation_m": [
+          -0.13960891798710806,
+          1.4032570194967255,
+          0.6790178399084978
+        ],
+        "quaternion_xyzw": [
+          0.7540010863520575,
+          0.0052850616004767505,
+          0.6567969321034967,
+          -0.008498228240708613
+        ],
+        "quaternion_wxyz": [
+          -0.008498228240708613,
+          0.7540010863520575,
+          0.0052850616004767505,
+          0.6567969321034967
+        ],
+        "rotation_matrix": [
+          [
+            0.13717971620662786,
+            0.019133104850019452,
+            0.9903613733179758
+          ],
+          [
+            -0.003193336097231398,
+            -0.999799696481296,
+            0.019757771141466308
+          ],
+          [
+            0.9905410279569641,
+            -0.005872922160781803,
+            -0.13709114019240717
+          ]
+        ],
+        "coordinateFrame": "unity_world_lh_y_up_z_forward"
+      },
+      "T_board_unity_world": {
+        "matrix_4x4": [
+          [
+            0.1371797162066279,
+            -0.003193336097231397,
+            0.9905410279569642,
+            -0.6489624461006426
+          ],
+          [
+            0.019133104850019452,
+            -0.9997996964812959,
+            -0.005872922160781803,
+            1.4096349131634842
+          ],
+          [
+            0.9903613733179759,
+            0.019757771141466308,
+            -0.13709114019240717,
+            0.20362537858531796
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation_m": [
+          -0.6489624461006426,
+          1.4096349131634842,
+          0.20362537858531796
+        ],
+        "quaternion_xyzw": [
+          0.7540010863520574,
+          0.0052850616004767505,
+          0.6567969321034968,
+          0.008498228240708613
+        ],
+        "quaternion_wxyz": [
+          0.008498228240708613,
+          0.7540010863520574,
+          0.0052850616004767505,
+          0.6567969321034968
+        ],
+        "rotation_matrix": [
+          [
+            0.1371797162066279,
+            -0.003193336097231397,
+            0.9905410279569642
+          ],
+          [
+            0.019133104850019452,
+            -0.9997996964812959,
+            -0.005872922160781803
+          ],
+          [
+            0.9903613733179759,
+            0.019757771141466308,
+            -0.13709114019240717
+          ]
+        ],
+        "coordinateFrame": "unity_world_lh_y_up_z_forward"
+      },
+      "questWorldOriginInBoardM": [
+        0.20362537858531796,
+        0.6489624461006427,
+        1.4096349131634842
+      ],
+      "unityQuestWorldOriginInBoardM": [
+        -0.6489624461006426,
+        1.4096349131634842,
+        0.20362537858531796
+      ],
+      "boardNormalWorld": [
+        -0.005872922160781803,
+        -0.019133104850019452,
+        -0.999799696481296
+      ],
+      "boardNormalAbsAngleToWorldZDeg": 1.1468039206038716,
+      "bestLagSeconds": 0.005,
+      "keptFrames": 8,
+      "inputFrames": 115,
+      "appearanceAnchorFrames": 8,
+      "reprojectionOrderFrames": 0,
+      "rot180Frames": 0,
+      "medianReprojectionPx": 0.5141805670736708,
+      "p90ReprojectionPx": 0.9371689773464662
+    },
+    "calibrationSnapshotJson": "/ssd1/shenyibo/Quest3DataCollector/pc/offline_calibration/pc_recordings/record_bounded_teleop_v3_20260722_180900/pc_calibration_snapshot.json",
+    "robotRealSense": {
+      "ok": true,
+      "recordId": "record_bounded_teleop_v3_20260722_180900",
+      "stage": "closed",
+      "directory": "/ssd1/shenyibo/Quest3DataCollector/pc/offline_calibration/pc_recordings/record_bounded_teleop_v3_20260722_180900/robot_realsense",
+      "recordMode": "async",
+      "recordingDurationSeconds": 130.9539959410031,
+      "recordingStartUnixSeconds": 1784711549.3212388,
+      "robotStateHz": 90.0,
+      "cameraSerial": "244222073667",
+      "thirdCameraSerial": "750612070265",
+      "cameraRoles": [
+        "end",
+        "third"
+      ],
+      "samples": 3925,
+      "questAlignedSamples": 3925,
+      "robotStateSamples": 11778,
+      "images": 0,
+      "videos": {
+        "end": "videos/end_244222073667.mp4",
+        "third": "videos/third_750612070265.mp4"
+      },
+      "depthStreams": {
+        "third": "depth/third_750612070265.ffv1.mkv",
+        "end": "depth/end_244222073667.ffv1.mkv"
+      },
+      "depthStreamEncodings": {
+        "third": "ffv1",
+        "end": "ffv1"
+      },
+      "depthStreamFrameCounts": {
+        "end": 1307,
+        "third": 1308
+      },
+      "depthStreamWarnings": [],
+      "depthStreamDisabledRoles": {},
+      "videoFrames": 7846,
+      "depthFrames": 2615,
+      "cameraQueueDrops": {},
+      "cameraSubscriberDrops": {
+        "third": 0,
+        "end": 0
+      },
+      "cameraQueueMaxSize": {
+        "end": 8,
+        "third": 8
+      },
+      "cameraWriterThreadsAliveOnClose": {
+        "end": false,
+        "third": false
+      },
+      "errors": 0,
+      "robotStateErrors": 0,
+      "cameraRecordErrors": 0,
+      "motionCommands": 1058,
+      "motionSkips": 1359,
+      "motionRateLimited": 1474,
+      "motionErrors": 0,
+      "lastMotion": {
+        "ok": false,
+        "reason": "right_hand_trigger_not_held",
+        "record_id": "record_bounded_teleop_v3_20260722_180900",
+        "captured_at": "2026-07-22T09:14:40.165956+00:00",
+        "quest_sample_index": 3932,
+        "quest_recording_timestamp_seconds": 131.06666666666666,
+        "anchored": false,
+        "teleopHeld": false,
+        "teleopHoldValue": 0.0,
+        "right_controller_input": {
+          "hasAny": true,
+          "handTrigger": 0.0,
+          "indexTrigger": 0.0,
+          "handTriggerPressed": false,
+          "indexTriggerPressed": false,
+          "aButton": null,
+          "bButton": null,
+          "teleopHeld": false,
+          "teleopThreshold": 0.65
+        },
+        "pc_perf_counter_seconds": 92965.059507741,
+        "pc_unix_seconds": 1784711680.1659732,
+        "update_duration_seconds": 0.0002199949958594516
+      },
+      "controlMode": "controller_teleop",
+      "controllerAlignmentRequired": true,
+      "controllerAlignmentAvailable": true,
+      "gripperEnabled": true,
+      "gripperAvailable": true,
+      "gripperCommands": 3,
+      "gripperSkips": 3888,
+      "gripperErrors": 0,
+      "lastGripper": {
+        "ok": false,
+        "commandSent": false,
+        "record_id": "record_bounded_teleop_v3_20260722_180900",
+        "captured_at": "2026-07-22T09:14:40.165723+00:00",
+        "quest_sample_index": 3932,
+        "quest_recording_timestamp_seconds": 131.06666666666666,
+        "trigger": 0.0,
+        "reason": "unchanged",
+        "pc_perf_counter_seconds": 92965.059277041,
+        "pc_unix_seconds": 1784711680.1657422,
+        "update_duration_seconds": 6.340199615806341e-05
+      },
+      "cartesianControl": {
+        "count": 1059,
+        "errors": 0,
+        "slowCalls": 0,
+        "last": {
+          "ok": true,
+          "durationSeconds": 5.8657999034039676e-05,
+          "slow": false,
+          "signature": "pose+wrench+limits",
+          "error": null,
+          "fallbackErrors": [],
+          "targetPoseWxyz": [
+            0.4124452769756317,
+            -0.07779347896575928,
+            0.43543094396591187,
+            0.01593296229839325,
+            -0.1482817381620407,
+            0.9856363534927368,
+            0.07924452424049377
+          ],
+          "unixSeconds": 1784711680.1939266
+        },
+        "slowThresholdSeconds": 0.05,
+        "globalCount": 1059,
+        "globalErrors": 0,
+        "globalSlowCalls": 0
+      },
+      "poseDiversity": {
+        "samples": 0,
+        "analyzedSamples": 0,
+        "pairCount": 0,
+        "totalPairCount": 0,
+        "pairwiseDownsampled": false,
+        "eeTranslationSpanM": 0.0,
+        "eeRotationSpanDeg": 0.0,
+        "eeAxisSpanM": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minTranslationSpanM": 0.02,
+        "minRotationSpanDeg": 2.0
+      },
+      "performance": {
+        "recordingDurationSeconds": 130.9541191180033,
+        "robotState": {
+          "count": 11778,
+          "durationSeconds": 130.8556227270019,
+          "effectiveHz": 89.99995380076113,
+          "firstPerfCounterSeconds": 92834.215293628,
+          "lastPerfCounterSeconds": 92965.070916355,
+          "targetHz": 90.0,
+          "targetRatio": 0.9999994866751237,
+          "gapSeconds": {
+            "count": 11777,
+            "mean": 0.011111116814723775,
+            "min": 0.005612956010736525,
+            "max": 0.01797472999896854,
+            "recentWindowCount": 4096,
+            "median": 0.01111099800618831,
+            "p90": 0.01115429700439563,
+            "p95": 0.01150766400678549,
+            "p99": 0.012860629853093998
+          }
+        },
+        "robotStateTargets": {
+          "count": 11778,
+          "durationSeconds": 130.8555556393403,
+          "effectiveHz": 89.99999994237442,
+          "firstPerfCounterSeconds": 92834.215290077,
+          "lastPerfCounterSeconds": 92965.07084571634,
+          "targetHz": 90.0,
+          "targetRatio": 0.9999999993597157,
+          "gapSeconds": {
+            "count": 11777,
+            "mean": 0.01111111111822538,
+            "min": 0.01111111111822538,
+            "max": 0.01111111111822538,
+            "recentWindowCount": 4096,
+            "median": 0.01111111111822538,
+            "p90": 0.01111111111822538,
+            "p95": 0.01111111111822538,
+            "p99": 0.01111111111822538
+          }
+        },
+        "robotStateLatenessSeconds": {
+          "count": 11778,
+          "mean": 0.00014001468292258867,
+          "min": 3.5510020097717643e-06,
+          "max": 0.00693414980196394,
+          "recentWindowCount": 4096,
+          "median": 6.905133341206238e-05,
+          "p90": 0.00012604432413354516,
+          "p95": 0.00048039614557637833,
+          "p99": 0.0018160654217354041
+        },
+        "robotStateMissedTicks": 0,
+        "alignedSamples": {
+          "count": 3925,
+          "durationSeconds": 130.81068290599796,
+          "effectiveHz": 29.997549992303234,
+          "firstPerfCounterSeconds": 92834.24999296,
+          "lastPerfCounterSeconds": 92965.060675866,
+          "targetHz": 30.0,
+          "targetRatio": 0.9999183330767745,
+          "gapSeconds": {
+            "count": 3924,
+            "mean": 0.03333605578644189,
+            "min": 0.015581671003019437,
+            "max": 0.050010092003503814,
+            "recentWindowCount": 3924,
+            "median": 0.03334224750142312,
+            "p90": 0.03412164160254179,
+            "p95": 0.03432565964758396,
+            "p99": 0.04769502725830534
+          }
+        },
+        "alignedSampleTargets": {
+          "count": 3925,
+          "durationSeconds": 130.80000002664747,
+          "effectiveHz": 29.999999993888196,
+          "firstPerfCounterSeconds": 92834.248835922,
+          "lastPerfCounterSeconds": 92965.04883594865,
+          "targetHz": 30.0,
+          "targetRatio": 0.9999999997962732,
+          "gapSeconds": {
+            "count": 3924,
+            "mean": 0.03333333334012423,
+            "min": 0.03333333334012423,
+            "max": 0.03333333334012423,
+            "recentWindowCount": 3924,
+            "median": 0.03333333334012423,
+            "p90": 0.03333333334012423,
+            "p95": 0.03333333334012423,
+            "p99": 0.03333333334012423
+          }
+        },
+        "alignedSampleLatenessSeconds": {
+          "count": 3925,
+          "mean": 0.0015739787747797254,
+          "min": 5.0043046940118074e-05,
+          "max": 0.01897031263797544,
+          "recentWindowCount": 3925,
+          "median": 0.0009144097857642919,
+          "p90": 0.001309920972562395,
+          "p95": 0.0089008764130994,
+          "p99": 0.015091757527552544
+        },
+        "alignedQuestSourceAgeSeconds": {
+          "count": 3925,
+          "mean": 0.023031926938061227,
+          "min": 6.525700155179948e-05,
+          "max": 0.13524391000100877,
+          "recentWindowCount": 3925,
+          "median": 0.02394313800323289,
+          "p90": 0.026776116198743694,
+          "p95": 0.02739142700447701,
+          "p99": 0.0735586117976345
+        },
+        "alignedReusedSourceSamples": 109,
+        "targetAlignedSampleHz": 30.0,
+        "cameras": {
+          "end": {
+            "video": {
+              "count": 3923,
+              "durationSeconds": 130.82663336300175,
+              "effectiveHz": 29.97860526700029,
+              "firstPerfCounterSeconds": 92834.224075725,
+              "lastPerfCounterSeconds": 92965.050709088,
+              "targetHz": 30.0,
+              "targetRatio": 0.999286842233343,
+              "gapSeconds": {
+                "count": 3922,
+                "mean": 0.033357122224120794,
+                "min": 0.026303659993573092,
+                "max": 0.03977465000934899,
+                "recentWindowCount": 3922,
+                "median": 0.033459015998232644,
+                "p90": 0.034794813803455324,
+                "p95": 0.035442696847167096,
+                "p99": 0.0371454396599438
+              }
+            },
+            "depth": {
+              "count": 1307,
+              "durationSeconds": 130.69639420699968,
+              "effectiveHz": 9.992624570281027,
+              "firstPerfCounterSeconds": 92834.286775043,
+              "lastPerfCounterSeconds": 92964.98316925,
+              "targetHz": 10.0,
+              "targetRatio": 0.9992624570281027,
+              "gapSeconds": {
+                "count": 1306,
+                "mean": 0.10007380873430298,
+                "min": 0.09389776700118091,
+                "max": 0.10670286399545148,
+                "recentWindowCount": 1306,
+                "median": 0.10005176450067665,
+                "p90": 0.1009371820036904,
+                "p95": 0.10141855475012562,
+                "p99": 0.10277182524441743
+              }
+            },
+            "writeDurationSeconds": {
+              "count": 3923,
+              "mean": 0.00193012978541536,
+              "min": 0.0006545340002048761,
+              "max": 0.05934833000355866,
+              "recentWindowCount": 3923,
+              "median": 0.0017602139996597543,
+              "p90": 0.002950533403782174,
+              "p95": 0.0035046746968873774,
+              "p99": 0.004541309020132756
+            },
+            "captureToWriteLatencySeconds": {
+              "count": 3923,
+              "mean": 0.0020545033239943193,
+              "min": 0.0006831810023868456,
+              "max": 0.06040817000030074,
+              "recentWindowCount": 3923,
+              "median": 0.001832524998462759,
+              "p90": 0.0032237356004770844,
+              "p95": 0.0038447039099992245,
+              "p99": 0.005165727482235523
+            },
+            "queueDrops": 0,
+            "sessionQueueDrops": 0,
+            "hubSubscriberDrops": 0,
+            "queueDropRatio": 0.0,
+            "videoFramesWritten": 3923,
+            "depthFramesWritten": 1307
+          },
+          "third": {
+            "video": {
+              "count": 3923,
+              "durationSeconds": 130.82467085401004,
+              "effectiveHz": 29.97905497791499,
+              "firstPerfCounterSeconds": 92834.24290787,
+              "lastPerfCounterSeconds": 92965.067578724,
+              "targetHz": 30.0,
+              "targetRatio": 0.9993018325971664,
+              "gapSeconds": {
+                "count": 3922,
+                "mean": 0.03335662183937023,
+                "min": 0.022952294995775446,
+                "max": 0.042913316006888635,
+                "recentWindowCount": 3922,
+                "median": 0.033416256999771576,
+                "p90": 0.034834210405824705,
+                "p95": 0.03532253430457786,
+                "p99": 0.03704914120418834
+              }
+            },
+            "depth": {
+              "count": 1308,
+              "durationSeconds": 130.79563249999774,
+              "effectiveHz": 9.992688402650009,
+              "firstPerfCounterSeconds": 92834.271946224,
+              "lastPerfCounterSeconds": 92965.067578724,
+              "targetHz": 10.0,
+              "targetRatio": 0.9992688402650008,
+              "gapSeconds": {
+                "count": 1307,
+                "mean": 0.10007316947207172,
+                "min": 0.09159356099553406,
+                "max": 0.11082998900383245,
+                "recentWindowCount": 1307,
+                "median": 0.10003373700601514,
+                "p90": 0.10179579399409704,
+                "p95": 0.10244158440473257,
+                "p99": 0.10411934641568224
+              }
+            },
+            "writeDurationSeconds": {
+              "count": 3923,
+              "mean": 0.0018735166857631678,
+              "min": 0.0006684419931843877,
+              "max": 0.04281717399135232,
+              "recentWindowCount": 3923,
+              "median": 0.0015617460012435913,
+              "p90": 0.0032579251972492786,
+              "p95": 0.00399249269394204,
+              "p99": 0.005743549793842248
+            },
+            "captureToWriteLatencySeconds": {
+              "count": 3923,
+              "mean": 0.001968025389452702,
+              "min": 0.000696466988301836,
+              "max": 0.04405356200004462,
+              "recentWindowCount": 3923,
+              "median": 0.0016351350059267133,
+              "p90": 0.003401954204309732,
+              "p95": 0.004205850709695367,
+              "p99": 0.005969651220366355
+            },
+            "queueDrops": 0,
+            "sessionQueueDrops": 0,
+            "hubSubscriberDrops": 0,
+            "queueDropRatio": 0.0,
+            "videoFramesWritten": 3923,
+            "depthFramesWritten": 1308
+          }
+        },
+        "targetCameraHz": 30.0,
+        "recordDepth": true,
+        "recordDepthFormat": "ffv1",
+        "depthStreamEncodings": {
+          "third": "ffv1",
+          "end": "ffv1"
+        },
+        "recordDepthEveryNFrames": 3,
+        "targetDepthHz": 10.0,
+        "quality": {
+          "ok": true,
+          "robotState": {
+            "ok": true,
+            "targetHz": 90.0,
+            "minimumEffectiveHz": 85.5,
+            "maximumP95GapSeconds": 0.016666666666666666,
+            "effectiveHz": 89.99995380076113,
+            "p95GapSeconds": 0.01150766400678549,
+            "enoughSamples": true,
+            "rateOk": true,
+            "gapOk": true,
+            "p95LatenessSeconds": 0.00048039614557637833,
+            "missedTicks": 0
+          },
+          "alignedSamples": {
+            "ok": true,
+            "targetHz": 30.0,
+            "minimumEffectiveHz": 28.5,
+            "maximumP95GapSeconds": 0.05,
+            "effectiveHz": 29.997549992303234,
+            "p95GapSeconds": 0.03432565964758396,
+            "enoughSamples": true,
+            "rateOk": true,
+            "gapOk": true,
+            "p95LatenessSeconds": 0.0089008764130994
+          },
+          "cameras": {
+            "end": {
+              "ok": true,
+              "targetHz": 30.0,
+              "minimumEffectiveHz": 28.5,
+              "maximumP95GapSeconds": 0.05,
+              "effectiveHz": 29.97860526700029,
+              "p95GapSeconds": 0.035442696847167096,
+              "enoughSamples": true,
+              "rateOk": true,
+              "gapOk": true,
+              "queueDrops": 0,
+              "queueDropRatio": 0.0
+            },
+            "third": {
+              "ok": true,
+              "targetHz": 30.0,
+              "minimumEffectiveHz": 28.5,
+              "maximumP95GapSeconds": 0.05,
+              "effectiveHz": 29.97905497791499,
+              "p95GapSeconds": 0.03532253430457786,
+              "enoughSamples": true,
+              "rateOk": true,
+              "gapOk": true,
+              "queueDrops": 0,
+              "queueDropRatio": 0.0
+            }
+          },
+          "criteria": "effective rate >= 95% of target, p95 gap <= 1.5x target period, robot p95 lateness <= 6ms with zero missed ticks, aligned p95 lateness <= 16ms, and zero camera queue drops"
+        }
+      },
+      "closeErrors": [],
+      "lastError": null,
+      "lastRobotStateError": null,
+      "lastCameraRecordError": null
+    },
+    "replayVisualizationJson": "/ssd1/shenyibo/Quest3DataCollector/pc/offline_calibration/pc_recordings/record_bounded_teleop_v3_20260722_180900/replay_visualization.json",
+    "teleopLatencyAnalysisJson": "/ssd1/shenyibo/Quest3DataCollector/pc/offline_calibration/pc_recordings/record_bounded_teleop_v3_20260722_180900/teleop_latency_analysis.json",
+    "teleopLatency": {
+      "ok": true,
+      "primary": {
+        "source": "targetToRobot",
+        "ok": true,
+        "correlationLagSeconds": 0.27999999999999997,
+        "correlation": 0.6812013312627067,
+        "eventCount": 0,
+        "eventLatencySeconds": {
+          "count": 0
+        },
+        "warnings": []
+      },
+      "warnings": []
+    }
+  },
+  "udpTransport": {
+    "rawPath": "/ssd1/shenyibo/Quest3DataCollector/pc/offline_calibration/pc_recordings/record_bounded_teleop_v3_20260722_180900/pc_telemetry_raw.jsonl",
+    "datagrams": 3934,
+    "sampleDatagrams": 3933,
+    "sequenceCount": 3934,
+    "firstSequence": 1,
+    "lastSequence": 3934,
+    "expectedSequenceCount": 3934,
+    "missingSequenceCount": 0,
+    "firstMissingSequences": [],
+    "sequenceLossRatio": 0.0,
+    "duplicateSequenceCount": 0,
+    "reorderedSequenceCount": 0,
+    "redundantDuplicateDatagramsIgnored": 7865,
+    "encodings": {
+      "json": 3934
+    },
+    "wireBytes": {
+      "count": 3934,
+      "mean": 1402.4946619217083,
+      "median": 1415.0,
+      "p90": 1419.0,
+      "p95": 1420.0,
+      "p99": 1421.0,
+      "min": 93.0,
+      "max": 1423.0
+    },
+    "jsonBytes": {
+      "count": 3934,
+      "mean": 1402.4946619217083,
+      "median": 1415.0,
+      "p90": 1419.0,
+      "p95": 1420.0,
+      "p99": 1421.0,
+      "min": 93.0,
+      "max": 1423.0
+    }
+  },
+  "summary": "26/26 required checks passing",
+  "performance": {
+    "recordingDurationSeconds": 130.9541191180033,
+    "robotState": {
+      "count": 11778,
+      "durationSeconds": 130.8556227270019,
+      "effectiveHz": 89.99995380076113,
+      "firstPerfCounterSeconds": 92834.215293628,
+      "lastPerfCounterSeconds": 92965.070916355,
+      "targetHz": 90.0,
+      "targetRatio": 0.9999994866751237,
+      "gapSeconds": {
+        "count": 11777,
+        "mean": 0.011111116814723775,
+        "min": 0.005612956010736525,
+        "max": 0.01797472999896854,
+        "recentWindowCount": 4096,
+        "median": 0.01111099800618831,
+        "p90": 0.01115429700439563,
+        "p95": 0.01150766400678549,
+        "p99": 0.012860629853093998
+      }
+    },
+    "robotStateTargets": {
+      "count": 11778,
+      "durationSeconds": 130.8555556393403,
+      "effectiveHz": 89.99999994237442,
+      "firstPerfCounterSeconds": 92834.215290077,
+      "lastPerfCounterSeconds": 92965.07084571634,
+      "targetHz": 90.0,
+      "targetRatio": 0.9999999993597157,
+      "gapSeconds": {
+        "count": 11777,
+        "mean": 0.01111111111822538,
+        "min": 0.01111111111822538,
+        "max": 0.01111111111822538,
+        "recentWindowCount": 4096,
+        "median": 0.01111111111822538,
+        "p90": 0.01111111111822538,
+        "p95": 0.01111111111822538,
+        "p99": 0.01111111111822538
+      }
+    },
+    "robotStateLatenessSeconds": {
+      "count": 11778,
+      "mean": 0.00014001468292258867,
+      "min": 3.5510020097717643e-06,
+      "max": 0.00693414980196394,
+      "recentWindowCount": 4096,
+      "median": 6.905133341206238e-05,
+      "p90": 0.00012604432413354516,
+      "p95": 0.00048039614557637833,
+      "p99": 0.0018160654217354041
+    },
+    "robotStateMissedTicks": 0,
+    "alignedSamples": {
+      "count": 3925,
+      "durationSeconds": 130.81068290599796,
+      "effectiveHz": 29.997549992303234,
+      "firstPerfCounterSeconds": 92834.24999296,
+      "lastPerfCounterSeconds": 92965.060675866,
+      "targetHz": 30.0,
+      "targetRatio": 0.9999183330767745,
+      "gapSeconds": {
+        "count": 3924,
+        "mean": 0.03333605578644189,
+        "min": 0.015581671003019437,
+        "max": 0.050010092003503814,
+        "recentWindowCount": 3924,
+        "median": 0.03334224750142312,
+        "p90": 0.03412164160254179,
+        "p95": 0.03432565964758396,
+        "p99": 0.04769502725830534
+      }
+    },
+    "alignedSampleTargets": {
+      "count": 3925,
+      "durationSeconds": 130.80000002664747,
+      "effectiveHz": 29.999999993888196,
+      "firstPerfCounterSeconds": 92834.248835922,
+      "lastPerfCounterSeconds": 92965.04883594865,
+      "targetHz": 30.0,
+      "targetRatio": 0.9999999997962732,
+      "gapSeconds": {
+        "count": 3924,
+        "mean": 0.03333333334012423,
+        "min": 0.03333333334012423,
+        "max": 0.03333333334012423,
+        "recentWindowCount": 3924,
+        "median": 0.03333333334012423,
+        "p90": 0.03333333334012423,
+        "p95": 0.03333333334012423,
+        "p99": 0.03333333334012423
+      }
+    },
+    "alignedSampleLatenessSeconds": {
+      "count": 3925,
+      "mean": 0.0015739787747797254,
+      "min": 5.0043046940118074e-05,
+      "max": 0.01897031263797544,
+      "recentWindowCount": 3925,
+      "median": 0.0009144097857642919,
+      "p90": 0.001309920972562395,
+      "p95": 0.0089008764130994,
+      "p99": 0.015091757527552544
+    },
+    "alignedQuestSourceAgeSeconds": {
+      "count": 3925,
+      "mean": 0.023031926938061227,
+      "min": 6.525700155179948e-05,
+      "max": 0.13524391000100877,
+      "recentWindowCount": 3925,
+      "median": 0.02394313800323289,
+      "p90": 0.026776116198743694,
+      "p95": 0.02739142700447701,
+      "p99": 0.0735586117976345
+    },
+    "alignedReusedSourceSamples": 109,
+    "targetAlignedSampleHz": 30.0,
+    "cameras": {
+      "end": {
+        "video": {
+          "count": 3923,
+          "durationSeconds": 130.82663336300175,
+          "effectiveHz": 29.97860526700029,
+          "firstPerfCounterSeconds": 92834.224075725,
+          "lastPerfCounterSeconds": 92965.050709088,
+          "targetHz": 30.0,
+          "targetRatio": 0.999286842233343,
+          "gapSeconds": {
+            "count": 3922,
+            "mean": 0.033357122224120794,
+            "min": 0.026303659993573092,
+            "max": 0.03977465000934899,
+            "recentWindowCount": 3922,
+            "median": 0.033459015998232644,
+            "p90": 0.034794813803455324,
+            "p95": 0.035442696847167096,
+            "p99": 0.0371454396599438
+          }
+        },
+        "depth": {
+          "count": 1307,
+          "durationSeconds": 130.69639420699968,
+          "effectiveHz": 9.992624570281027,
+          "firstPerfCounterSeconds": 92834.286775043,
+          "lastPerfCounterSeconds": 92964.98316925,
+          "targetHz": 10.0,
+          "targetRatio": 0.9992624570281027,
+          "gapSeconds": {
+            "count": 1306,
+            "mean": 0.10007380873430298,
+            "min": 0.09389776700118091,
+            "max": 0.10670286399545148,
+            "recentWindowCount": 1306,
+            "median": 0.10005176450067665,
+            "p90": 0.1009371820036904,
+            "p95": 0.10141855475012562,
+            "p99": 0.10277182524441743
+          }
+        },
+        "writeDurationSeconds": {
+          "count": 3923,
+          "mean": 0.00193012978541536,
+          "min": 0.0006545340002048761,
+          "max": 0.05934833000355866,
+          "recentWindowCount": 3923,
+          "median": 0.0017602139996597543,
+          "p90": 0.002950533403782174,
+          "p95": 0.0035046746968873774,
+          "p99": 0.004541309020132756
+        },
+        "captureToWriteLatencySeconds": {
+          "count": 3923,
+          "mean": 0.0020545033239943193,
+          "min": 0.0006831810023868456,
+          "max": 0.06040817000030074,
+          "recentWindowCount": 3923,
+          "median": 0.001832524998462759,
+          "p90": 0.0032237356004770844,
+          "p95": 0.0038447039099992245,
+          "p99": 0.005165727482235523
+        },
+        "queueDrops": 0,
+        "sessionQueueDrops": 0,
+        "hubSubscriberDrops": 0,
+        "queueDropRatio": 0.0,
+        "videoFramesWritten": 3923,
+        "depthFramesWritten": 1307
+      },
+      "third": {
+        "video": {
+          "count": 3923,
+          "durationSeconds": 130.82467085401004,
+          "effectiveHz": 29.97905497791499,
+          "firstPerfCounterSeconds": 92834.24290787,
+          "lastPerfCounterSeconds": 92965.067578724,
+          "targetHz": 30.0,
+          "targetRatio": 0.9993018325971664,
+          "gapSeconds": {
+            "count": 3922,
+            "mean": 0.03335662183937023,
+            "min": 0.022952294995775446,
+            "max": 0.042913316006888635,
+            "recentWindowCount": 3922,
+            "median": 0.033416256999771576,
+            "p90": 0.034834210405824705,
+            "p95": 0.03532253430457786,
+            "p99": 0.03704914120418834
+          }
+        },
+        "depth": {
+          "count": 1308,
+          "durationSeconds": 130.79563249999774,
+          "effectiveHz": 9.992688402650009,
+          "firstPerfCounterSeconds": 92834.271946224,
+          "lastPerfCounterSeconds": 92965.067578724,
+          "targetHz": 10.0,
+          "targetRatio": 0.9992688402650008,
+          "gapSeconds": {
+            "count": 1307,
+            "mean": 0.10007316947207172,
+            "min": 0.09159356099553406,
+            "max": 0.11082998900383245,
+            "recentWindowCount": 1307,
+            "median": 0.10003373700601514,
+            "p90": 0.10179579399409704,
+            "p95": 0.10244158440473257,
+            "p99": 0.10411934641568224
+          }
+        },
+        "writeDurationSeconds": {
+          "count": 3923,
+          "mean": 0.0018735166857631678,
+          "min": 0.0006684419931843877,
+          "max": 0.04281717399135232,
+          "recentWindowCount": 3923,
+          "median": 0.0015617460012435913,
+          "p90": 0.0032579251972492786,
+          "p95": 0.00399249269394204,
+          "p99": 0.005743549793842248
+        },
+        "captureToWriteLatencySeconds": {
+          "count": 3923,
+          "mean": 0.001968025389452702,
+          "min": 0.000696466988301836,
+          "max": 0.04405356200004462,
+          "recentWindowCount": 3923,
+          "median": 0.0016351350059267133,
+          "p90": 0.003401954204309732,
+          "p95": 0.004205850709695367,
+          "p99": 0.005969651220366355
+        },
+        "queueDrops": 0,
+        "sessionQueueDrops": 0,
+        "hubSubscriberDrops": 0,
+        "queueDropRatio": 0.0,
+        "videoFramesWritten": 3923,
+        "depthFramesWritten": 1308
+      }
+    },
+    "targetCameraHz": 30.0,
+    "recordDepth": true,
+    "recordDepthFormat": "ffv1",
+    "depthStreamEncodings": {
+      "third": "ffv1",
+      "end": "ffv1"
+    },
+    "recordDepthEveryNFrames": 3,
+    "targetDepthHz": 10.0,
+    "quality": {
+      "ok": true,
+      "robotState": {
+        "ok": true,
+        "targetHz": 90.0,
+        "minimumEffectiveHz": 85.5,
+        "maximumP95GapSeconds": 0.016666666666666666,
+        "effectiveHz": 89.99995380076113,
+        "p95GapSeconds": 0.01150766400678549,
+        "enoughSamples": true,
+        "rateOk": true,
+        "gapOk": true,
+        "p95LatenessSeconds": 0.00048039614557637833,
+        "missedTicks": 0
+      },
+      "alignedSamples": {
+        "ok": true,
+        "targetHz": 30.0,
+        "minimumEffectiveHz": 28.5,
+        "maximumP95GapSeconds": 0.05,
+        "effectiveHz": 29.997549992303234,
+        "p95GapSeconds": 0.03432565964758396,
+        "enoughSamples": true,
+        "rateOk": true,
+        "gapOk": true,
+        "p95LatenessSeconds": 0.0089008764130994
+      },
+      "cameras": {
+        "end": {
+          "ok": true,
+          "targetHz": 30.0,
+          "minimumEffectiveHz": 28.5,
+          "maximumP95GapSeconds": 0.05,
+          "effectiveHz": 29.97860526700029,
+          "p95GapSeconds": 0.035442696847167096,
+          "enoughSamples": true,
+          "rateOk": true,
+          "gapOk": true,
+          "queueDrops": 0,
+          "queueDropRatio": 0.0
+        },
+        "third": {
+          "ok": true,
+          "targetHz": 30.0,
+          "minimumEffectiveHz": 28.5,
+          "maximumP95GapSeconds": 0.05,
+          "effectiveHz": 29.97905497791499,
+          "p95GapSeconds": 0.03532253430457786,
+          "enoughSamples": true,
+          "rateOk": true,
+          "gapOk": true,
+          "queueDrops": 0,
+          "queueDropRatio": 0.0
+        }
+      },
+      "criteria": "effective rate >= 95% of target, p95 gap <= 1.5x target period, robot p95 lateness <= 6ms with zero missed ticks, aligned p95 lateness <= 16ms, and zero camera queue drops"
+    },
+    "computedFromJsonl": {
+      "robotState": {
+        "count": 11778,
+        "durationSeconds": 130.8556227270019,
+        "effectiveHz": 89.99995380076113,
+        "firstPerfCounterSeconds": 92834.215293628,
+        "lastPerfCounterSeconds": 92965.070916355,
+        "targetHz": 90.0,
+        "targetRatio": 0.9999994866751237,
+        "gapSeconds": {
+          "count": 11777,
+          "mean": 0.011111116814723775,
+          "median": 0.011110943989478983,
+          "p90": 0.011156131996540353,
+          "p95": 0.011553193192230535,
+          "p99": 0.012829109040903858,
+          "min": 0.005612956010736525,
+          "max": 0.01797472999896854
+        }
+      },
+      "robotStateTargets": {
+        "count": 11778,
+        "durationSeconds": 130.8555556393403,
+        "effectiveHz": 89.99999994237442,
+        "firstPerfCounterSeconds": 92834.215290077,
+        "lastPerfCounterSeconds": 92965.07084571634,
+        "targetHz": 90.0,
+        "targetRatio": 0.9999999993597157,
+        "gapSeconds": {
+          "count": 11777,
+          "mean": 0.01111111111822538,
+          "median": 0.01111111111822538,
+          "p90": 0.01111111111822538,
+          "p95": 0.01111111111822538,
+          "p99": 0.01111111111822538,
+          "min": 0.01111111111822538,
+          "max": 0.01111111111822538
+        }
+      },
+      "robotStateLatenessSeconds": {
+        "count": 11778,
+        "mean": 0.00014001468292258867,
+        "median": 6.840260903118178e-05,
+        "p90": 0.0001279040588997306,
+        "p95": 0.0005269934736134006,
+        "p99": 0.0017925740826467476,
+        "min": 3.5510020097717643e-06,
+        "max": 0.00693414980196394
+      },
+      "alignedSamples": {
+        "count": 3925,
+        "durationSeconds": 130.81068290599796,
+        "effectiveHz": 29.997549992303234,
+        "firstPerfCounterSeconds": 92834.24999296,
+        "lastPerfCounterSeconds": 92965.060675866,
+        "targetHz": 30.0,
+        "targetRatio": 0.9999183330767745,
+        "gapSeconds": {
+          "count": 3924,
+          "mean": 0.03333605578644189,
+          "median": 0.03334224750142312,
+          "p90": 0.03412164160254179,
+          "p95": 0.03432565964758396,
+          "p99": 0.04769502725830534,
+          "min": 0.015581671003019437,
+          "max": 0.050010092003503814
+        }
+      },
+      "alignedSampleTargets": {
+        "count": 3925,
+        "durationSeconds": 130.80000002664747,
+        "effectiveHz": 29.999999993888196,
+        "firstPerfCounterSeconds": 92834.248835922,
+        "lastPerfCounterSeconds": 92965.04883594865,
+        "targetHz": 30.0,
+        "targetRatio": 0.9999999997962732,
+        "gapSeconds": {
+          "count": 3924,
+          "mean": 0.03333333334012423,
+          "median": 0.03333333334012423,
+          "p90": 0.03333333334012423,
+          "p95": 0.03333333334012423,
+          "p99": 0.03333333334012423,
+          "min": 0.03333333334012423,
+          "max": 0.03333333334012423
+        }
+      },
+      "alignedSampleLatenessSeconds": {
+        "count": 3925,
+        "mean": 0.0015739787747797254,
+        "median": 0.0009144097857642919,
+        "p90": 0.001309920972562395,
+        "p95": 0.0089008764130994,
+        "p99": 0.015091757527552544,
+        "min": 5.0043046940118074e-05,
+        "max": 0.01897031263797544
+      },
+      "alignedQuestSourceAgeSeconds": {
+        "count": 3925,
+        "mean": 0.023031926938061227,
+        "median": 0.02394313800323289,
+        "p90": 0.026776116198743694,
+        "p95": 0.02739142700447701,
+        "p99": 0.0735586117976345,
+        "min": 6.525700155179948e-05,
+        "max": 0.13524391000100877
+      },
+      "alignedReusedSourceSamples": 109,
+      "targetAlignedSampleHz": 30.0,
+      "cameras": {
+        "end": {
+          "video": {
+            "count": 3923,
+            "durationSeconds": 130.82663336300175,
+            "effectiveHz": 29.97860526700029,
+            "firstPerfCounterSeconds": 92834.224075725,
+            "lastPerfCounterSeconds": 92965.050709088,
+            "targetHz": 30.0,
+            "targetRatio": 0.999286842233343,
+            "gapSeconds": {
+              "count": 3922,
+              "mean": 0.033357122224120794,
+              "median": 0.033459015998232644,
+              "p90": 0.034794813803455324,
+              "p95": 0.035442696847167096,
+              "p99": 0.0371454396599438,
+              "min": 0.026303659993573092,
+              "max": 0.03977465000934899
+            }
+          },
+          "depth": {
+            "count": 1307,
+            "durationSeconds": 130.69639420699968,
+            "effectiveHz": 9.992624570281027,
+            "firstPerfCounterSeconds": 92834.286775043,
+            "lastPerfCounterSeconds": 92964.98316925,
+            "targetHz": 10.0,
+            "targetRatio": 0.9992624570281027,
+            "gapSeconds": {
+              "count": 1306,
+              "mean": 0.10007380873430298,
+              "median": 0.10005176450067665,
+              "p90": 0.1009371820036904,
+              "p95": 0.10141855475012562,
+              "p99": 0.10277182524441743,
+              "min": 0.09389776700118091,
+              "max": 0.10670286399545148
+            }
+          },
+          "writeDurationSeconds": {
+            "count": 3923,
+            "mean": 0.00193012978541536,
+            "median": 0.0017602139996597543,
+            "p90": 0.002950533403782174,
+            "p95": 0.0035046746968873774,
+            "p99": 0.004541309020132756,
+            "min": 0.0006545340002048761,
+            "max": 0.05934833000355866
+          },
+          "captureToWriteLatencySeconds": {
+            "count": 3923,
+            "mean": 0.0020545033239943193,
+            "median": 0.001832524998462759,
+            "p90": 0.0032237356004770844,
+            "p95": 0.0038447039099992245,
+            "p99": 0.005165727482235523,
+            "min": 0.0006831810023868456,
+            "max": 0.06040817000030074
+          },
+          "queueDrops": 0,
+          "sessionQueueDrops": 0,
+          "hubSubscriberDrops": 0,
+          "queueDropRatio": 0.0,
+          "videoFramesWritten": 3923,
+          "depthFramesWritten": 1307
+        },
+        "third": {
+          "video": {
+            "count": 3923,
+            "durationSeconds": 130.82467085401004,
+            "effectiveHz": 29.97905497791499,
+            "firstPerfCounterSeconds": 92834.24290787,
+            "lastPerfCounterSeconds": 92965.067578724,
+            "targetHz": 30.0,
+            "targetRatio": 0.9993018325971664,
+            "gapSeconds": {
+              "count": 3922,
+              "mean": 0.03335662183937023,
+              "median": 0.033416256999771576,
+              "p90": 0.034834210405824705,
+              "p95": 0.03532253430457786,
+              "p99": 0.03704914120418834,
+              "min": 0.022952294995775446,
+              "max": 0.042913316006888635
+            }
+          },
+          "depth": {
+            "count": 1308,
+            "durationSeconds": 130.79563249999774,
+            "effectiveHz": 9.992688402650009,
+            "firstPerfCounterSeconds": 92834.271946224,
+            "lastPerfCounterSeconds": 92965.067578724,
+            "targetHz": 10.0,
+            "targetRatio": 0.9992688402650008,
+            "gapSeconds": {
+              "count": 1307,
+              "mean": 0.10007316947207172,
+              "median": 0.10003373700601514,
+              "p90": 0.10179579399409704,
+              "p95": 0.10244158440473257,
+              "p99": 0.10411934641568224,
+              "min": 0.09159356099553406,
+              "max": 0.11082998900383245
+            }
+          },
+          "writeDurationSeconds": {
+            "count": 3923,
+            "mean": 0.0018735166857631678,
+            "median": 0.0015617460012435913,
+            "p90": 0.0032579251972492786,
+            "p95": 0.00399249269394204,
+            "p99": 0.005743549793842248,
+            "min": 0.0006684419931843877,
+            "max": 0.04281717399135232
+          },
+          "captureToWriteLatencySeconds": {
+            "count": 3923,
+            "mean": 0.001968025389452702,
+            "median": 0.0016351350059267133,
+            "p90": 0.003401954204309732,
+            "p95": 0.004205850709695367,
+            "p99": 0.005969651220366355,
+            "min": 0.000696466988301836,
+            "max": 0.04405356200004462
+          },
+          "queueDrops": 0,
+          "sessionQueueDrops": 0,
+          "hubSubscriberDrops": 0,
+          "queueDropRatio": 0.0,
+          "videoFramesWritten": 3923,
+          "depthFramesWritten": 1308
+        }
+      },
+      "targetRobotStateHz": 90.0,
+      "targetCameraHz": 30.0,
+      "recordDepth": true,
+      "recordDepthEveryNFrames": 3,
+      "targetDepthHz": 10.0
+    }
+  }
+}

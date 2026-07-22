@@ -1,0 +1,62 @@
+{
+  "ok": true,
+  "recordId": "record_bounded_teleop_v3_20260722_180900",
+  "startedAtUtc": "2026-07-22T09:12:29.152297+00:00",
+  "finishedAtUtc": "2026-07-22T09:14:43.751200+00:00",
+  "baselineTcpPoseWxyz": [
+    0.41229671239852905,
+    -0.07776430249214172,
+    0.4358576536178589,
+    0.01601351983845234,
+    -0.1483047604560852,
+    0.9856103658676147,
+    0.0795074924826622
+  ],
+  "limits": {
+    "hardTranslationM": 0.05,
+    "hardRotationDeg": 10.0,
+    "watchdogTranslationM": 0.049,
+    "watchdogRotationDeg": 9.8,
+    "walkTranslationRadiusM": 0.04,
+    "walkRotationRadiusDeg": 8.0,
+    "translationSpeedMps": 0.01,
+    "rotationSpeedDegps": 3.0,
+    "seed": 20260721
+  },
+  "generated": {
+    "maxTranslationM": 0.039992100946678356,
+    "maxRotationDeg": 7.9980465148417705
+  },
+  "actualTcp": {
+    "statusSamples": 545,
+    "maxTranslationFromBaselineM": 0.04050041901189539,
+    "maxRotationFromBaselineDeg": 7.956890666662761
+  },
+  "watchdogViolation": null,
+  "statusErrors": [],
+  "error": null,
+  "disarmResults": [
+    {
+      "ok": true,
+      "motionArmed": false
+    },
+    {
+      "ok": true,
+      "motionArmed": false
+    },
+    {
+      "ok": true,
+      "motionArmed": false
+    }
+  ],
+  "finalMotionArmed": false,
+  "finalTcpPoseWxyz": [
+    0.4126099646091461,
+    -0.07786804437637329,
+    0.4345841407775879,
+    0.01593845896422863,
+    -0.1482856124639511,
+    0.9856623411178589,
+    0.07891198247671127
+  ]
+}

@@ -74,9 +74,9 @@ git -C thirdparty\gaze-dp remote -v
 | Quest3DataCollector | `quest3-chessboard-flexiv` | `origin` -> `git@github.com:Spphire/Quest3DataCollector.git` |
 | gaze-dp / Gaze-WAM | `gaze-wam-cleanup` | `gaze-dp` -> `git@github.com:Spphire/gaze-dp.git` |
 
-As of 2026-07-13, `Quest3DataCollector` has local uncommitted teleop-latency
-development changes. Commit those in the Collector repo before treating the
-Collector source as synchronized.
+As of 2026-07-22, Quest `main` and Collector `quest3-chessboard-flexiv` are
+committed and synchronized with GitHub. The Collector deployment is also a
+clean tracked checkout on `codex/lvjun-deployment-preserved-20260722`.
 
 ## Implementation Priorities
 
@@ -84,7 +84,6 @@ Current high-value missing bridge:
 
 1. Collector formal recording folder to Gaze-WAM robot zarr converter.
 2. Clear semantics for policy camera source, action labels, and gripper labels.
-3. Deployment sync policy for the unmanaged Collector PC folder.
 
 Do not assume these semantics silently. Record any decision in
 [gaze-project-overview.md](gaze-project-overview.md) and

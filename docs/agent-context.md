@@ -11,7 +11,7 @@ Load this file before working on tasks involving Quest gaze collection, `Quest3D
 - Treat `W:\lasertag-projs` and `W:\Quest3DataCollector` as legacy junction paths, not separate copies.
 - Treat `W:\实验室项目\Gaze-Project\thirdparty\gaze-dp` as the active Gaze-WAM path.
 - Treat `W:\实验室项目\gaze-wam` as a legacy junction path, not a separate copy.
-- Prefer read-only checks on `lvjun@10.128.0.227` and `H200-4042` before making claims about live deployment state.
+- Prefer read-only checks on `lvjun@10.128.1.95` and `H200-4042` before making claims about live deployment state.
 - Preserve unrelated local or remote changes. The H200 training tree was previously ahead/dirty, but was synced to `e111c7cdf77a` on 2026-07-02; verify current status before modifying it.
 - Use `rg`/`rg --files` first for code search.
 
@@ -20,20 +20,21 @@ Load this file before working on tasks involving Quest gaze collection, `Quest3D
 | Component | Local path | Remote/deploy path | Branch/commit observed |
 | --- | --- | --- | --- |
 | Shell docs/context | `W:\实验室项目\Gaze-Project` | `git@github.com:Spphire/Gaze-Project.git` | `main`; tracks docs and `.codex`, ignores `thirdparty/*` source |
-| Quest client | `W:\实验室项目\Gaze-Project\thirdparty\QuestGazeClient` | Quest 3 APK package `com.Apricity.EyeTrackingTest` | `main`, `dbc9b0d7cb61` |
-| Collector | `W:\实验室项目\Gaze-Project\thirdparty\Quest3DataCollector` | `lvjun@10.128.0.227:/ssd1/shenyibo/Quest3DataCollector` | local `quest3-chessboard-flexiv`, `81b8cfa17ab2`; remote folder has no `.git` |
+| Quest client | `W:\实验室项目\Gaze-Project\thirdparty\QuestGazeClient` | Quest 3 APK package `com.Apricity.EyeTrackingTest` | `main`, `b9636a6ed96b` |
+| Collector | `W:\实验室项目\Gaze-Project\thirdparty\Quest3DataCollector` | `lvjun@10.128.1.95:/ssd1/shenyibo/Quest3DataCollector` | local `quest3-chessboard-flexiv`, `39c0a6e5501b`; deployment `codex/lvjun-deployment-preserved-20260722`, `9bc2dfc66734`, clean and tracked |
 | Training | `W:\实验室项目\Gaze-Project\thirdparty\gaze-dp` | `H200-4042:/mnt/workspace/shenyibo/gaze-wam` | local/remote `gaze-wam-cleanup`, `e111c7cdf77a`; H200 worktree clean with one safety stash |
 
 ## Latest Health Check
 
-Checked on 2026-07-02:
+Checked on 2026-07-22:
 
-- Local repos are clean and synced: Quest with `origin/main`, Collector with `origin/quest3-chessboard-flexiv`, and Gaze-WAM with `gaze-dp/gaze-wam-cleanup`.
-- Quest USB is authorized as device `2G0YC1ZF940X95`. Package `com.Apricity.EyeTrackingTest` is installed with `versionCode=220`, `versionName=0.0.0a`, and Unity activity records are visible.
-- UnityHub points to `W:\实验室项目\Gaze-Project\thirdparty\QuestGazeClient`.
-- Collector remote is running at `lvjun@10.128.0.227`; UDP `9100`, TCP `9101`, and TCP `8765` are listening; viewer `http://10.128.0.227:8765/` returned HTTP 200.
-- Collector remote is not a git checkout. `.gitignore` and `requirements.txt` are copied there and the remote `.venv312` dry-run passed, but full deployment sync cannot be proven by git until the remote is made a git checkout or a manifest/hash sync is maintained.
-- Collector hardware visibility checked: network interface `192.168.2.108` is up; RealSense `750612070265` and `244222073667` enumerate.
+- Local Quest and Collector repos are clean and synced. Quest `main` is `b9636a6ed96b`; Collector `quest3-chessboard-flexiv` is `39c0a6e5501b`.
+- Quest device `2G0YC1ZF940X95` is authorized. The tested APK SHA256 is `9941648D4692B339F1BBD784EA0FD7C857B2B2BE460AE982F8746E0F9A370A76`.
+- Collector runs at `lvjun@10.128.1.95`; UDP `9100`, TCP `9101`, and TCP `8765` are active. PID `1594943` uses `--formal-control-mode record_only`, with motion unarmed and motion commands disallowed after testing.
+- The Collector deployment is a clean Git checkout on `codex/lvjun-deployment-preserved-20260722` at `9bc2dfc66734`, tracking the same GitHub branch over read-only HTTPS. The branch preserves previously unmanaged red-anchor calibration and Unity compatibility changes without losing them.
+- `record_bounded_teleop_v3_20260722_180900` passed all 26 performance checks. Flexiv state was 89.99995 Hz, aligned output 29.99755 Hz, both RealSense streams about 29.98 Hz, and UDP/camera queue drops were zero.
+- The bounded synthetic sender stayed under the 50 mm / 10 deg hard range: generated 39.992 mm / 7.998 deg and actual TCP 40.500 mm / 7.957 deg. This was not a physical Touch-controller test.
+- Quest record `record_20260722_140745` ran 397.199 seconds at 29.9983 Hz trajectory and 29.9989 Hz dual video with zero missed ticks; both MP4 hashes and full decodes passed.
 - H200 training deployment is synced with `gaze-dp/gaze-wam-cleanup` at `e111c7cdf77a`; `git status -sb` is clean. A safety stash remains: `stash@{Thu Jul 2 17:00:23 2026}: On gaze-wam-cleanup: pre-sync dirty tree before e111c7c 2026-07-02`.
 - H200 data exists: HOT3D processed data, `data/hot3d_open_train.zarr`, `data/hot3d_open_val.zarr`, and Cosmos latent stats file. Default H200 `python` has `torch` and `cv2`, but did not have `zarr`; use or create the intended training environment before running zarr conversion/validation.
 - H200 fetched from GitHub successfully during the sync to `e111c7cdf77a`.
@@ -42,7 +43,8 @@ Checked on 2026-07-02:
 
 - See `docs/deployment-environments.md` for the current environment/requirements inventory.
 - QuestGazeClient is a Unity project and does not use a Python venv. Use Unity `6000.0.60f1` and `Packages/manifest.json`.
-- Quest3DataCollector has committed `thirdparty\Quest3DataCollector\requirements.txt`, generated from the running remote `.venv312` package set. Local Collector has no venv yet; remote uses `.venv312` with Python `3.12.13`.
+- Open/build QuestGazeClient through `W:\lasertag-projs`; Unity Android tools reject the canonical path because it contains non-ASCII characters. The junction points to the same workspace tree.
+- Quest3DataCollector has committed `thirdparty\Quest3DataCollector\requirements.txt`, generated from the running remote `.venv312` package set. Local Collector uses `.venv` with Python `3.12.13`; remote uses `.venv312` with Python `3.12.13`.
 - Gaze-WAM is venv-only for current deployment. Use local `thirdparty\gaze-dp\.venv` and H200 `/mnt/workspace/shenyibo/gaze-wam/.venv`; do not use default H200 `python` for zarr work. H200 `.venv` uses `--system-site-packages`; install the frozen H200 snapshot with `python -m pip install --no-deps -r requirements.txt`. `requirements.txt`, `requirements-h200.txt`, `requirements-h200-editables.txt`, and `requirements-local-windows.txt` are committed on `gaze-wam-cleanup`. `conda_environment.yaml` is legacy reference only.
 
 ## Useful Checks
@@ -58,7 +60,7 @@ git -C 'W:\实验室项目\Gaze-Project\thirdparty\gaze-dp' status -sb
 Collector deployment read-only status:
 
 ```powershell
-ssh lvjun@10.128.0.227 "ps -ef | grep -F quest_pc_receiver.py | grep -v grep; ss -lunpt | grep -E ':9100|:9101|:8765' || true"
+ssh lvjun@10.128.1.95 "cd /ssd1/shenyibo/Quest3DataCollector && git status -sb && git rev-parse --short=12 HEAD; pgrep -af quest_pc_receiver.py; curl -fsS http://127.0.0.1:8765/robot/safety-status"
 ```
 
 Training deployment read-only status:
@@ -80,22 +82,25 @@ If the Quest shows `unauthorized`, ask the user to accept the RSA/USB debugging 
 Quest formal recording:
 
 - A button toggles formal recording.
-- `QuestRecordingTelemetrySender.cs` sends UDP JSON datagrams to `10.128.0.227:9100`.
+- `QuestRecordingTelemetrySender.cs` sends UDP JSON datagrams to `10.128.1.95:9100`.
 - Protocol: `quest_recording_telemetry_v1`.
 - Events: `recording_start`, `sample`, `recording_stop`.
 - Important sample fields: `recordId`, `sampleIndex`, Quest timestamps, gaze rays/points, eye/camera/head poses, left/right controller state.
+- Formal Quest video, trajectory, and UDP sample generation target fixed 30 Hz. Recording metadata reports effective rates and encoder/pipeline drops.
 
 Quest calibration recording:
 
 - B button toggles PC calibration recording.
-- `QuestPcCalibrationRecorder.cs` talks to `http://10.128.0.227:9101`.
+- `QuestPcCalibrationRecorder.cs` talks to `http://10.128.1.95:9101`.
 - Endpoints: `/calibration/start`, `/calibration/sample`, `/calibration/stop`.
 
 Collector receiver:
 
 - Main script: `W:\实验室项目\Gaze-Project\thirdparty\Quest3DataCollector\pc\offline_calibration\scripts\quest_pc_receiver.py`.
-- Remote viewer: `http://10.128.0.227:8765/`.
+- Remote viewer: `http://10.128.1.95:8765/`.
 - Observed live receiver uses Flexiv network interface `192.168.2.108`, end RealSense serial `244222073667`, third RealSense serial `750612070265`, robot state 90 Hz, depth every 3 frames, FFV1 depth, Robotiq 2F-85 gripper.
+- Collector preserves Flexiv state at fixed-deadline 90 Hz and writes `robot_realsense/samples.jsonl` on a fixed-deadline 30 Hz alignment clock. RealSense RGB targets 30 Hz.
+- Run `quest_pc_receiver.py audit-performance --pc-session <record_dir>` after representative recordings. Default gates require >=95% target rate, zero camera queue drops, zero fixed-sampler missed ticks, robot p95 lateness <=6 ms, and aligned p95 lateness <=15 ms.
 - Coordinate conversion from Unity to PC/robot frame: `pc = [unity.z, -unity.x, unity.y]`.
 - Teleop responsiveness can be analyzed with `quest_pc_receiver.py teleop-latency --pc-session <record_dir>`; formal robot recordings also auto-write `teleop_latency_analysis.json`, and replay exposes a Teleop latency panel.
 
@@ -145,4 +150,24 @@ Known decisions still open:
 1. Confirm policy camera source and RealSense serial.
 2. Confirm whether `action_abs_tcp` means executed future TCP, command target, or another target.
 3. Confirm gripper label semantics.
-4. Confirm how to synchronize the unmanaged remote Collector deployment with git.
+
+## Quest-Only Hardware Check (2026-07-17)
+
+- Quest `2G0YC1ZF940X95` is authorized and the fixed target APK is installed.
+- Installed APK SHA256 is
+  `71F30C3E65E68A9908607B22C8C4293E0F7336D20650ECEFB0F3845A12DF1A48`.
+- The finalized MP4 hash bug was fixed in
+  `Assets/Plugins/Android/com/Noematrix/recorder/EncorderThread.java`; metadata
+  now matches the actual MP4 file hash after muxer shutdown.
+- A 122-second quiet Quest-only run produced 3,600/3,604 dual-camera frames,
+  zero pipeline/encoder drops, valid gaze on every trajectory row, matching
+  file hashes, and fully decodable H.264 videos.
+- Strict timing did not pass: trajectory effective rate was 29.881 Hz with
+  five missed ticks and a 212.863 ms maximum gap. Both cameras had a matching
+  200 ms gap. The event correlated with a Horizon `ocal` color-camera stream
+  transition and a late color frame report.
+- Quest-only report: `docs/quest-endpoint-test-20260717.md`.
+- App was stopped after the test, Wi-Fi and proximity behavior were restored,
+  and 17 historical recording directories were restored byte-for-byte.
+- Collector `10.128.0.227` remained unreachable on `22/8765/9100/9101`; no
+  end-to-end or robot performance claim has been made.

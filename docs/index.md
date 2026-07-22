@@ -18,7 +18,12 @@ This directory is the stable project memory for the Gaze Project shell repo.
 5. [usage.md](usage.md)  
    Operator workflow for Quest recording, calibration, replay, teleop latency,
    and training handoff.
-6. [agent-context.md](agent-context.md)  
+6. [performance.md](performance.md)
+   Quest/Collector frequency contract, quality gates, and safe benchmark flow.
+7. [quest-endpoint-test-20260717.md](quest-endpoint-test-20260717.md)
+   Quest-only hardware test, APK integrity fix, timing evidence, and restore
+   record.
+8. [agent-context.md](agent-context.md)
    Short context file for future agents.
 
 ## Repository Boundaries

@@ -1,22 +1,22 @@
 # Deployment
 
-Last updated: 2026-07-13, Asia/Shanghai.
+Last updated: 2026-07-22, Asia/Shanghai.
 
 ## Deployment Inventory
 
 | Component | Deployment | Current purpose |
 | --- | --- | --- |
 | QuestGazeClient | Quest 3 device, package `com.Apricity.EyeTrackingTest` | Sends formal recording telemetry over UDP and calibration samples over HTTP. |
-| Quest3DataCollector | `lvjun@10.128.0.227:/ssd1/shenyibo/Quest3DataCollector` | Receives Quest telemetry, records Flexiv/RealSense/gripper streams, serves viewer. |
+| Quest3DataCollector | `lvjun@10.128.1.95:/ssd1/shenyibo/Quest3DataCollector` | Receives Quest telemetry, records Flexiv/RealSense/gripper streams, serves viewer. |
 | gaze-dp / Gaze-WAM | `H200-4042:/mnt/workspace/shenyibo/gaze-wam` | Trains and validates gaze-conditioned policies using HOT3D and future robot zarr data. |
 
 ## Network Protocols
 
 | Path | Protocol | Endpoint |
 | --- | --- | --- |
-| Quest formal recording | UDP JSON | `10.128.0.227:9100` |
-| Quest PC calibration recording | HTTP | `http://10.128.0.227:9101` |
-| Collector viewer | HTTP | `http://10.128.0.227:8765/` |
+| Quest formal recording | UDP JSON | `10.128.1.95:9100` |
+| Quest PC calibration recording | HTTP | `http://10.128.1.95:9101` |
+| Collector viewer | HTTP | `http://10.128.1.95:8765/` |
 
 ## Collector Runtime
 
@@ -32,24 +32,23 @@ Observed lab receiver command:
   --realsense-serial 244222073667 \
   --third-realsense-serial 750612070265 \
   --robot-state-hz 90 \
+  --formal-control-mode record_only \
   --record-realsense-depth-every-n-frames 3 \
-  --record-realsense-depth-format ffv1 \
-  --enable-gripper \
-  --gripper-device Robotiq-2F-85 \
-  --gripper-force 40
+  --record-realsense-depth-format ffv1
 ```
 
 Read-only health check:
 
 ```powershell
-ssh lvjun@10.128.0.227 "ps -ef | grep -F quest_pc_receiver.py | grep -v grep; ss -lunpt | grep -E ':9100|:9101|:8765' || true"
-curl.exe -s -o NUL -w "%{http_code}\n" http://10.128.0.227:8765/
+ssh lvjun@10.128.1.95 "cd /ssd1/shenyibo/Quest3DataCollector && git status -sb && git rev-parse --short=12 HEAD; pgrep -af quest_pc_receiver.py"
+curl.exe -s -o NUL -w "%{http_code}\n" http://10.128.1.95:8765/
 ```
 
 Important state:
 
-- Remote Collector folder is currently not a git checkout.
+- Remote Collector is a clean Git checkout on `codex/lvjun-deployment-preserved-20260722` at `9bc2dfc66734`, tracking the same branch on GitHub.
 - `.venv312` is the active receiver environment.
+- The current receiver is deliberately parked in `record_only`; normal formal teleoperation requires restarting with `controller_teleop` after an operator safety check.
 - Runtime hardware assumptions include Flexiv RDK/license, robot network access,
   RealSense USB access, and gripper device access.
 
@@ -94,5 +93,5 @@ git -C W:\实验室项目\Gaze-Project\thirdparty\gaze-dp push gaze-dp gaze-wam-
 ```
 
 Do not overwrite remote deployments with local files before checking remote
-status and running process state. The Collector deployment is unmanaged by git,
-so file-level sync should be deliberate and documented.
+status and running process state. Preserve deployment-only changes on a branch,
+then use fast-forward Git updates for reviewed code.

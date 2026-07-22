@@ -4,17 +4,17 @@ This is a compact fallback for `$gaze-project-context`. Prefer `W:\实验室项�
 
 ## Components
 
-- Quest client: `W:\实验室项目\Gaze-Project\thirdparty\QuestGazeClient`, branch `main`, commit `dbc9b0d7cb61`, remote `git@github.com:Spphire/QuestGazeClient.git`. Legacy `W:\lasertag-projs` is a junction.
-- Collector: `W:\实验室项目\Gaze-Project\thirdparty\Quest3DataCollector`, branch `quest3-chessboard-flexiv`, commit `81b8cfa17ab2`, remote `git@github.com:Spphire/Quest3DataCollector.git`. Legacy `W:\Quest3DataCollector` is a junction.
-- Collector deployment: `lvjun@10.128.0.227:/ssd1/shenyibo/Quest3DataCollector`, no `.git` observed, receiver listens on UDP `9100`, TCP `9101`, TCP `8765`.
+- Quest client: `W:\实验室项目\Gaze-Project\thirdparty\QuestGazeClient`, branch `main`, commit `b9636a6ed96b`, remote `git@github.com:Spphire/QuestGazeClient.git`. Legacy `W:\lasertag-projs` is a junction.
+- Collector: `W:\实验室项目\Gaze-Project\thirdparty\Quest3DataCollector`, branch `quest3-chessboard-flexiv`, commit `39c0a6e5501b`, remote `git@github.com:Spphire/Quest3DataCollector.git`. Legacy `W:\Quest3DataCollector` is a junction.
+- Collector deployment: `lvjun@10.128.1.95:/ssd1/shenyibo/Quest3DataCollector`, clean Git branch `codex/lvjun-deployment-preserved-20260722` at `9bc2dfc66734`; receiver listens on UDP `9100`, TCP `9101`, TCP `8765`.
 - Training: `W:\实验室项目\Gaze-Project\thirdparty\gaze-dp`, branch `gaze-wam-cleanup`, commit `e111c7cdf77a`, remote `git@github.com:Spphire/gaze-dp.git`. Legacy `W:\实验室项目\gaze-wam` is a junction.
 - Training deployment: `H200-4042:/mnt/workspace/shenyibo/gaze-wam`, branch `gaze-wam-cleanup`, observed remote commit `e111c7cdf77a`, clean with one pre-sync safety stash.
 
 ## Protocols
 
-- Quest formal recording: A button, UDP JSON, `quest_recording_telemetry_v1`, target `10.128.0.227:9100`.
-- Quest calibration recording: B button, HTTP `quest_pc_calibration_recording_v1`, target `http://10.128.0.227:9101`.
-- Collector viewer: `http://10.128.0.227:8765/`.
+- Quest formal recording: A button, UDP JSON, `quest_recording_telemetry_v1`, target `10.128.1.95:9100`.
+- Quest calibration recording: B button, HTTP `quest_pc_calibration_recording_v1`, target `http://10.128.1.95:9101`.
+- Collector viewer: `http://10.128.1.95:8765/`.
 - Unity frame to PC frame: `pc = [unity.z, -unity.x, unity.y]`.
 - Teleop latency: `quest_pc_receiver.py teleop-latency --pc-session <record_dir>` reads `teleop_latency_analysis.json` / `robot_realsense/controller_motion.jsonl` / `robot_realsense/robot_states.jsonl`; positive lag means robot TCP motion follows command/controller motion on the Collector PC timeline.
 
@@ -30,4 +30,4 @@ This is a compact fallback for `$gaze-project-context`. Prefer `W:\实验室项�
 
 The missing converter should produce robot zarr data with `data/camera0_rgb`, `data/gaze_xy`, `data/action_abs_tcp`, `data/tcp_pose_abs`, `data/gripper_width`, optional masks/timestamps, and `meta/episode_ends`. Use the existing Gaze-WAM scripts `prepare_robot_gaze_wam_zarr.py`, `canonicalize_robot_gaze_wam_zarr.py`, and `validate_gaze_wam_zarr.py` after conversion.
 
-Confirm policy camera serial, action semantics, gripper label source, and remote Collector sync policy with the user before locking converter behavior.
+Confirm policy camera serial, action semantics, and gripper label source with the user before locking converter behavior.

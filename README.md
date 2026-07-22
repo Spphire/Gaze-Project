@@ -28,6 +28,8 @@ deployment state, and agent context.
   and operational checks.
 - [docs/usage.md](docs/usage.md): operator workflow for recording, calibration,
   replay, latency inspection, and training handoff.
+- [docs/performance.md](docs/performance.md): 90/30 Hz collection contract,
+  performance gates, optimization notes, and safe live evaluation procedure.
 - [docs/agent-context.md](docs/agent-context.md): compact context for future
   agents.
 
@@ -61,5 +63,6 @@ git -C W:\实验室项目\Gaze-Project\thirdparty\Quest3DataCollector status -sb
 git -C W:\实验室项目\Gaze-Project\thirdparty\gaze-dp status -sb
 ```
 
-Do not commit large datasets, Unity build outputs, venvs, zarr stores, or
-recording artifacts into this shell repo.
+Do not commit large datasets, Unity build outputs, venvs, zarr stores, or raw
+recordings into this shell repo. Small JSON audit summaries may be kept under
+`artifacts/` as qualification evidence.

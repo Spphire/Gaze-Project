@@ -1,6 +1,6 @@
 # Gaze Project Overview
 
-Last updated: 2026-07-13, Asia/Shanghai.
+Last updated: 2026-07-22, Asia/Shanghai.
 
 This workspace documents the current three-part gaze robotics project: a Quest 3 Unity client records gaze and teleoperation intent, a PC-side Collector receives and records synchronized robot/camera data, and Gaze-WAM trains gaze-conditioned policies from HOT3D plus future robot demonstrations.
 
@@ -24,8 +24,8 @@ The main missing bridge is a converter from Collector recording folders to the c
 | Component | Role | Source of truth checked | Branch and commit | Deployment |
 | --- | --- | --- | --- | --- |
 | `Gaze-Project` shell | Documentation, deployment notes, and persistent agent context. | `W:\实验室项目\Gaze-Project` | `main`, remote `git@github.com:Spphire/Gaze-Project.git` | Tracks `README.md`, `docs/**`, `.codex/**`, and lightweight workspace metadata. It intentionally ignores `thirdparty/*` source contents. |
-| `QuestGazeClient` | Unity Quest 3 client. Sends gaze, headset, controller, and recording events. | `W:\实验室项目\Gaze-Project\thirdparty\QuestGazeClient` | `main`, `dbc9b0d7cb61` | Built APKs exist locally. `W:\lasertag-projs` is now a junction to this path. UnityHub `projects-v1.json` was updated to the new real path. Quest device `2G0YC1ZF940X95` is authorized, package `com.Apricity.EyeTrackingTest` is installed, and ADB launch resumed `UnityPlayerGameActivity`. |
-| `Quest3DataCollector` | PC receiver, calibration recorder, Flexiv/RealSense/gripper capture, viewer. | `W:\实验室项目\Gaze-Project\thirdparty\Quest3DataCollector` | `quest3-chessboard-flexiv`, `81b8cfa17ab2` | Running on `lvjun@10.128.0.227:/ssd1/shenyibo/Quest3DataCollector`. Remote folder is not a git repo. `W:\Quest3DataCollector` is now a junction to the workspace path. |
+| `QuestGazeClient` | Unity Quest 3 client. Sends gaze, headset, controller, and recording events. | `W:\实验室项目\Gaze-Project\thirdparty\QuestGazeClient` | `main`, `b9636a6ed96b` | Built APKs exist locally. `W:\lasertag-projs` is a junction to this path. Quest device `2G0YC1ZF940X95` is authorized and the 2026-07-22 recording build was hardware-qualified. |
+| `Quest3DataCollector` | PC receiver, calibration recorder, Flexiv/RealSense/gripper capture, viewer. | `W:\实验室项目\Gaze-Project\thirdparty\Quest3DataCollector` | `quest3-chessboard-flexiv`, `39c0a6e5501b` | Running on `lvjun@10.128.1.95:/ssd1/shenyibo/Quest3DataCollector`. The clean deployment branch `codex/lvjun-deployment-preserved-20260722` is at `9bc2dfc66734` and tracks GitHub. `W:\Quest3DataCollector` is a junction to the workspace path. |
 | `gaze-dp` / Gaze-WAM | Training codebase for gaze-conditioned policy. | `W:\实验室项目\Gaze-Project\thirdparty\gaze-dp` | `gaze-wam-cleanup`, `e111c7cdf77a` | Also deployed at `H200-4042:/mnt/workspace/shenyibo/gaze-wam`, now fast-forwarded to `e111c7cdf77a` with clean status and one pre-sync safety stash. `W:\实验室项目\gaze-wam` is now a junction to the workspace path. |
 | Workspace thirdparty | Consolidated local project area. | `W:\实验室项目\Gaze-Project\thirdparty\*` | Active for all three local repos | Earlier small mirror clones were removed/replaced by active projects or junctions to active projects to avoid duplicate disk usage. |
 
@@ -39,6 +39,7 @@ Remote: `git@github.com:Spphire/QuestGazeClient.git`
 
 Unity/package facts:
 
+- UnityHub and Android builds use `W:\lasertag-projs`, the zero-copy ASCII junction to the canonical workspace tree.
 - Unity version in project: `6000.0.60f1`.
 - Android package: `com.Apricity.EyeTrackingTest`.
 - Key code:
@@ -51,11 +52,12 @@ Runtime behavior:
 - A button starts/stops formal recording telemetry.
 - B button starts/stops PC calibration recording.
 - UDP formal telemetry protocol is `quest_recording_telemetry_v1`.
-- Default telemetry target is `10.128.0.227:9100`.
-- Messages are newline UTF-8 JSON datagrams with event types such as `recording_start`, `sample`, and `recording_stop`.
+- Default telemetry target is `10.128.1.95:9100`.
+- Messages are UTF-8 JSON datagrams with event types such as `recording_start`, `sample`, and `recording_stop`.
+- Formal Quest video, trajectory, and UDP samples target a fixed 30 Hz.
 - Sample fields include `recordId`, `sampleIndex`, `unityTimestampSeconds`, `recordingTimestampSeconds`, gaze ray/point fields, eye/camera poses, and left/right controller state.
 - B-button calibration uses HTTP, not UDP:
-  - default server URL: `http://10.128.0.227:9101`
+  - default server URL: `http://10.128.1.95:9101`
   - protocol: `quest_pc_calibration_recording_v1`
   - endpoints: `/calibration/start`, `/calibration/sample`, `/calibration/stop`
 - File command bridge on Quest:
@@ -86,10 +88,10 @@ Key files:
 
 Verified remote deployment:
 
-- Host: `lvjun@10.128.0.227`
+- Host: `lvjun@10.128.1.95`
 - Project path: `/ssd1/shenyibo/Quest3DataCollector`
 - Python venv: `/ssd1/shenyibo/Quest3DataCollector/.venv312`
-- Viewer URL from the lab network: `http://10.128.0.227:8765/`
+- Viewer URL from the lab network: `http://10.128.1.95:8765/`
 - Listening ports observed:
   - UDP `9100` for formal Quest telemetry.
   - TCP `9101` for calibration HTTP API.
@@ -143,7 +145,9 @@ Coordinate frames:
 
 Teleoperation notes:
 
-- Formal recording is asynchronous: Quest samples, robot states, RealSense frames, and gripper state are timestamped and aligned later.
+- Flexiv robot state is preserved at a fixed-deadline 90 Hz.
+- RealSense RGB and the final `robot_realsense/samples.jsonl` alignment stream target 30 Hz.
+- Formal recording remains asynchronous internally, but the Collector writes a fixed-deadline 30 Hz fusion timeline using the latest timestamped Quest, robot, and camera values.
 - Right-controller teleoperation depends on a valid Quest-to-robot calibration.
 - During A-recording, right hand side/grip trigger enables right-controller teleop.
 - Right index trigger controls the gripper when gripper support is enabled.
@@ -219,7 +223,6 @@ Minimum output behavior:
 These should be confirmed with the project owner and then synchronized back into this document and `docs/agent-context.md`.
 
 1. Which RealSense serial is the end-effector policy camera now? The remote receiver currently uses `--realsense-serial 244222073667` and `--third-realsense-serial 750612070265`, while older notes suggested `750612070265` might have been the end/checkerboard camera.
-2. Should the remote Collector at `/ssd1/shenyibo/Quest3DataCollector` be converted into a git checkout, rsynced from `W:\实验室项目\Gaze-Project\thirdparty\Quest3DataCollector`, or intentionally kept as an unmanaged deployment copy?
-3. Which image stream should become `data/camera0_rgb`: end RealSense, third RealSense, Quest passthrough-derived image, or another camera?
-4. For `action_abs_tcp`, should the training target use actual executed robot TCP trajectory, controller-derived commanded target, or a future action target computed from adjacent robot states?
-5. What is the preferred gripper label source: measured gripper width, command log, or binary open/close derived from trigger input?
+2. Which image stream should become `data/camera0_rgb`: end RealSense, third RealSense, Quest passthrough-derived image, or another camera?
+3. For `action_abs_tcp`, should the training target use actual executed robot TCP trajectory, controller-derived commanded target, or a future action target computed from adjacent robot states?
+4. What is the preferred gripper label source: measured gripper width, command log, or binary open/close derived from trigger input?

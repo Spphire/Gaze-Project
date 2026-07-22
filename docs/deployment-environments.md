@@ -1,6 +1,6 @@
 # Deployment Environments
 
-Last checked: 2026-07-02, Asia/Shanghai.
+Last checked: 2026-07-22, Asia/Shanghai.
 
 This document records the runtime environments for the three local projects now consolidated under `W:\实验室项目\Gaze-Project\thirdparty`.
 
@@ -10,8 +10,8 @@ Venv policy: do not use conda as the active deployment path. Use project venvs p
 
 | Component | Local path | Environment status | Requirement source |
 | --- | --- | --- | --- |
-| QuestGazeClient | `thirdparty\QuestGazeClient` | Unity project, no Python venv expected. UnityHub points here. | `ProjectSettings\ProjectVersion.txt`, `Packages\manifest.json`, `Packages\packages-lock.json`. |
-| Quest3DataCollector | `thirdparty\Quest3DataCollector` | No local venv currently. Remote deployment uses `.venv312`. | Committed `thirdparty\Quest3DataCollector\requirements.txt`, created from the running remote `.venv312`. |
+| QuestGazeClient | `thirdparty\QuestGazeClient` | Unity project, no Python venv expected. UnityHub opens the same tree through `W:\lasertag-projs`. | `ProjectSettings\ProjectVersion.txt`, `Packages\manifest.json`, `Packages\packages-lock.json`. |
+| Quest3DataCollector | `thirdparty\Quest3DataCollector` | Local `.venv` and remote `.venv312` both use Python 3.12.13. | Committed `thirdparty\Quest3DataCollector\requirements.txt`, created from the running remote `.venv312`. |
 | gaze-dp / Gaze-WAM | `thirdparty\gaze-dp` | Local `.venv` exists. H200 remote `.venv` exists. Default H200 `python` is not the project env. | Committed venv requirements: `requirements.txt` / `requirements-h200.txt` for H200 and `requirements-local-windows.txt` for local Windows. `conda_environment.yaml` is legacy reference only. |
 
 ## QuestGazeClient
@@ -23,21 +23,38 @@ Checked facts:
 - Unity version: `6000.0.60f1`.
 - Package manifest: `thirdparty\QuestGazeClient\Packages\manifest.json`.
 - Package lock: `thirdparty\QuestGazeClient\Packages\packages-lock.json`.
-- UnityHub project entry points to `W:\实验室项目\Gaze-Project\thirdparty\QuestGazeClient`.
-- Quest USB device is authorized as `2G0YC1ZF940X95`.
+- UnityHub project entry points to the ASCII junction `W:\lasertag-projs`, which resolves to the canonical workspace tree.
+- Quest USB device `2G0YC1ZF940X95` was authorized and used for the 2026-07-22 hardware qualification.
 - Android package `com.Apricity.EyeTrackingTest` is installed on Quest.
 
 ## Quest3DataCollector
 
-Local project currently has no local venv. The remote deployment at `lvjun@10.128.0.227:/ssd1/shenyibo/Quest3DataCollector` uses:
+The local project now has:
+
+- venv: `thirdparty\Quest3DataCollector\.venv`
+- Python: `3.12.13`
+- all packages from `requirements.txt`; imports and `pip check` pass
+
+The remote deployment at `lvjun@10.128.1.95:/ssd1/shenyibo/Quest3DataCollector` uses:
 
 - venv: `/ssd1/shenyibo/Quest3DataCollector/.venv312`
 - Python: `3.12.13`
 - pip: `26.1.2`
+- Git branch: `codex/lvjun-deployment-preserved-20260722`
+- Git commit: `9bc2dfc66734312460e31e133bd71a3bd8fde663`
+- Upstream: read-only HTTPS `origin/codex/lvjun-deployment-preserved-20260722`
 
 The runtime package set from that venv is captured in:
 
 - `thirdparty\Quest3DataCollector\requirements.txt`
+
+To recreate the local Windows environment:
+
+```powershell
+cd 'W:\实验室项目\Gaze-Project\thirdparty\Quest3DataCollector'
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+```
 
 To recreate the receiver environment on Linux:
 
@@ -56,7 +73,7 @@ Runtime hardware/system assumptions still live outside pip:
 - Robotiq gripper device access when gripper capture is enabled.
 - Collector PC network interface `192.168.2.108` for Flexiv side.
 
-Remote runtime currently listens on UDP `9100`, HTTP `9101`, and viewer `8765`.
+Remote runtime currently listens on UDP `9100`, HTTP `9101`, and viewer `8765`. The receiver is parked in `record_only` with motion commands disallowed after the qualification run.
 
 ## Gaze-WAM
 
