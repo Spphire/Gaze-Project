@@ -7,6 +7,7 @@
 !/thirdparty/.gitkeep
 
 # Local caches and generated artifacts.
+/tmp/
 .pytest_cache/
 __pycache__/
 *.pyc

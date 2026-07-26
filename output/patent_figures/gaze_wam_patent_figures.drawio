@@ -1,0 +1,326 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-07-27T00:00:00.000Z" agent="Codex" version="26.0.4" compressed="false">
+  <diagram id="图1_总体训练架构" name="图1 总体训练架构">
+    <mxGraphModel dx="1800" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="图1 总体训练架构_title" value="图1 总体训练架构" style="text;html=1;align=left;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=26;fontStyle=1;fontColor=#17202A;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="1600" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_robot" value="机器人示范&lt;br&gt;图像 + 动作 + 可选注视" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#FBF1E8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="160" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_open" value="开放第一视角&lt;br&gt;图像 + 注视，无动作" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#EAF5EF;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="350" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_route" value="逐样本路由标记&lt;br&gt;is_open / has_action / has_heatmap&lt;br&gt;has_gaze_label / use_gaze_condition" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#E6EAED;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="380" y="245" width="330" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_r1" value="机器人真实注视行&lt;br&gt;真实注视作条件&lt;br&gt;仅动作监督" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#EAF2F8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="800" y="100" width="280" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_r2" value="机器人注视丢弃行&lt;br&gt;[MASK] 作条件&lt;br&gt;动作 + 热图监督" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#F3EEF8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="800" y="285" width="280" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_o" value="开放注视行&lt;br&gt;[MASK] 作条件&lt;br&gt;仅热图监督" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#EAF5EF;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="800" y="470" width="280" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_enc" value="图像编码 + 注视编码&lt;br&gt;真实注视或 learned [MASK]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#EAF2F8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="245" width="300" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_world" value="世界上下文塔&lt;br&gt;逐层 K/V cache" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#E6EAED;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="1570" y="245" width="250" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_action" value="动作扩散解码器&lt;br&gt;[B,16,10]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#FBF1E8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="670" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_heat" value="热图扩散解码器&lt;br&gt;[B,256,16]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#F3EEF8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="1570" y="670" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_loss" value="掩码损失并联合更新&lt;br&gt;动作门控 + 热图门控" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#E6EAED;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="1370" y="865" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f1_robot" target="f1_route" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f1_open" target="f1_route" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f1_route" target="f1_r1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f1_route" target="f1_r2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f1_route" target="f1_o" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f1_r1" target="f1_enc" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f1_r2" target="f1_enc" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f1_o" target="f1_enc" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f1_enc" target="f1_world" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_e10" value="共享 K/V" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;dashed=1;" edge="1" source="f1_world" target="f1_action" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_e11" value="共享 K/V" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;dashed=1;" edge="1" source="f1_world" target="f1_heat" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_e12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f1_action" target="f1_loss" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_e13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f1_heat" target="f1_loss" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="图2_样本路由与防泄漏" name="图2 样本路由与防泄漏">
+    <mxGraphModel dx="1800" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="图2 样本路由与防泄漏_title" value="图2 样本路由与防泄漏" style="text;html=1;align=left;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=26;fontStyle=1;fontColor=#17202A;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="1600" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_in" value="样本 i" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#FFFFFF;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="50" y="220" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_source" value="is_open?" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#E6EAED;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="330" y="220" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_open" value="开放行 O&lt;br&gt;[MASK] 条件&lt;br&gt;仅热图监督" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#EAF5EF;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="650" y="90" width="260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_label" value="机器人行&lt;br&gt;has_gaze_label?" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#E6EAED;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="650" y="285" width="260" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_r0" value="机器人无注视 R0&lt;br&gt;动作监督&lt;br&gt;[MASK] 条件" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#FBF1E8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="230" width="280" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_drop" value="drop gaze condition?" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#E6EAED;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="430" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_r1" value="真实注视 R1&lt;br&gt;真实注视作条件&lt;br&gt;仅动作监督" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#EAF2F8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="1450" y="345" width="280" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_r2" value="注视丢弃 R2&lt;br&gt;[MASK] 条件&lt;br&gt;动作 + 热图监督" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#F3EEF8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="1450" y="530" width="280" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_guard" value="统一校验&lt;br&gt;Bool [B] 路由 + 零占位&lt;br&gt;真实注视条件行禁止热图监督" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#E6EAED;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="680" y="740" width="430" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_mask" value="m_i^a=(1-s_i)a_i&lt;br&gt;m_i^h=h_i g_i&lt;br&gt;c_i=(1-s_i)g_i(1-d_i)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#FFFFFF;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="750" width="430" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f2_in" target="f2_source" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_e2" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f2_source" target="f2_open" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_e3" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f2_source" target="f2_label" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_e4" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f2_label" target="f2_r0" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_e5" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f2_label" target="f2_drop" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_e6" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f2_drop" target="f2_r1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_e7" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f2_drop" target="f2_r2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;dashed=1;" edge="1" source="f2_open" target="f2_guard" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;dashed=1;" edge="1" source="f2_r0" target="f2_guard" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_e10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;dashed=1;" edge="1" source="f2_r1" target="f2_guard" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_e11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;dashed=1;" edge="1" source="f2_r2" target="f2_guard" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_e12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f2_guard" target="f2_mask" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="图3_双流世界缓存" name="图3 双流世界缓存">
+    <mxGraphModel dx="1800" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="图3 双流世界缓存_title" value="图3 双流世界缓存" style="text;html=1;align=left;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=26;fontStyle=1;fontColor=#17202A;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="1600" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_img" value="视觉 tokens&lt;br&gt;[B,N_v,768]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#EAF2F8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="170" width="230" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_gaze" value="注视/[MASK] token&lt;br&gt;[B,1,768]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#EAF5EF;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="340" width="230" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_cat" value="拼接 + 模态/位置嵌入" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#E6EAED;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="380" y="250" width="270" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_ctx" value="7 层 ContextSelfBlock" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#E6EAED;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="770" y="250" width="260" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_cache" value="逐层 world cache&lt;br&gt;{K_l^w,V_l^w}" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#FFFFFF;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="250" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_ain" value="noisy action + t" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#FBF1E8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="360" y="610" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_ab" value="7 层 action blocks&lt;br&gt;world K/V + action K/V" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#FBF1E8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="760" y="590" width="310" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_aout" value="动作噪声预测&lt;br&gt;[B,16,10]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#FBF1E8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="610" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_hin" value="noisy heatmap + t" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#F3EEF8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="360" y="830" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_hb" value="7 层 heatmap blocks&lt;br&gt;world K/V + heatmap K/V" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#F3EEF8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="760" y="810" width="310" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_hout" value="热图 latent 预测&lt;br&gt;[B,256,16]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#F3EEF8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="830" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_iso" value="目标流隔离&lt;br&gt;action 不读 heatmap&lt;br&gt;heatmap 不读 action" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#E6EAED;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="1550" y="640" width="290" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f3_img" target="f3_cat" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f3_gaze" target="f3_cat" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f3_cat" target="f3_ctx" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f3_ctx" target="f3_cache" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f3_ain" target="f3_ab" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f3_ab" target="f3_aout" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f3_hin" target="f3_hb" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f3_hb" target="f3_hout" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_e9" value="逐层复用" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;dashed=1;" edge="1" source="f3_cache" target="f3_ab" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_e10" value="逐层复用" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;dashed=1;" edge="1" source="f3_cache" target="f3_hb" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_e11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;dashed=1;" edge="1" source="f3_aout" target="f3_iso" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_e12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;dashed=1;" edge="1" source="f3_hout" target="f3_iso" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="图4_训练与正式推理" name="图4 训练与正式推理">
+    <mxGraphModel dx="1800" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="图4 训练与正式推理_title" value="图4 训练与正式推理" style="text;html=1;align=left;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=26;fontStyle=1;fontColor=#17202A;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="1600" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_batch" value="训练批次条件编码" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#E6EAED;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="150" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_noise" value="共享 timestep&lt;br&gt;动作/热图分别加噪" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#FFFFFF;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="370" y="150" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_ad" value="动作解码器" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#FBF1E8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="740" y="90" width="230" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_hd" value="热图解码器" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#F3EEF8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="740" y="240" width="230" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_al" value="masked action MSE" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#FBF1E8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="90" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_hl" value="masked DSNT + JS" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#F3EEF8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="240" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_total" value="总损失&lt;br&gt;更新共享世界表征" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#E6EAED;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="160" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_obs" value="正式推理观测&lt;br&gt;图像 + 注视/[MASK]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#EAF2F8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="610" width="260" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_prefill" value="world cache 预填充一次" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#E6EAED;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="420" y="610" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_ddim" value="8 步 DDIM&lt;br&gt;仅动作解码器" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#FBF1E8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="830" y="600" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_action" value="动作块输出" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#FBF1E8;strokeColor=#28323C;fontColor=#17202A;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="610" width="240" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_skip" value="热图流省略&lt;br&gt;noisy_heatmap=None" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.5;fontFamily=Microsoft YaHei;fontSize=13;align=center;verticalAlign=middle;spacing=8;fillColor=#FFFFFF;strokeColor=#28323C;fontColor=#17202A;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1600" y="610" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f4_batch" target="f4_noise" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f4_noise" target="f4_ad" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f4_noise" target="f4_hd" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f4_ad" target="f4_al" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f4_hd" target="f4_hl" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f4_al" target="f4_total" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f4_hl" target="f4_total" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f4_obs" target="f4_prefill" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f4_prefill" target="f4_ddim" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_e10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;" edge="1" source="f4_ddim" target="f4_action" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_e11" value="明确不执行" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#28323C;strokeWidth=1.7;endArrow=classic;dashed=1;" edge="1" source="f4_action" target="f4_skip" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
